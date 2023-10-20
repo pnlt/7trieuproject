@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class SpawnITem : MonoBehaviour
 {
-    //[SerializeField] private float zOffsetStart; //246
-    [SerializeField] private float zOffsetEnd; //490
+    [SerializeField] private float zOffsetEnd; //base on the length of our map
     [SerializeField] private float _spawnTime;
     [SerializeField] private float zOffset;
 
@@ -16,10 +15,9 @@ public class SpawnITem : MonoBehaviour
 
     private float spawnTimer;
     private int objectTobeSpawned;
-    private float zTracking;
 
     private Vector3 spawnPos;
-    private float[] xPosValues = { -1110f, -782f, -442f };
+    private float[] xPosValues = { -4, 0, 4 };
     private float zPos;
     private float xPos;
 
@@ -29,7 +27,7 @@ public class SpawnITem : MonoBehaviour
         zPos = transform.position.z + zOffsetEnd;
         spawnTimer = Time.time;
 
-        poolManager = GameObject.Find("PoolingManager");
+        poolManager = GameObject.Find("PoolManager");
 
     }
 
@@ -41,27 +39,34 @@ public class SpawnITem : MonoBehaviour
 
     private void SpawnItemsRandomly()
     {
-        /*if (Time.time - spawnTimer > _spawnTime) 
-        {
-            float zSpawn = Random.Range(transform.position.z + zOffsetStart, transform.position.z + zOffsetEnd);
-            GameObject item = Instantiate(itemPrefab[Random.Range(0, itemPrefab.Length)]);
-            item.transform.position = new Vector3(0, transform.position.y, zSpawn);
-            spawnTimer = Time.time;
-        }*/
-
-        //objectTobeSpawned = Mathf.RoundToInt(Random.Range(0, itemPrefab.Length));
-        RandomWithGap(0);
+        LineRandomContinuously();
     }
 
 
     //Random object continuously in one line
     private void LineRandomContinuously()
     {
+        if (Time.time - spawnTimer > _spawnTime)
+        {
+            xPos = xPosValues[Mathf.RoundToInt(Random.Range(0, xPosValues.Length))];
+            for (int i = 0; i < Random.Range(2, 5); i++)
+            {
+                spawnPos = new Vector3(xPos, transform.position.y, zPos);
+                zPos += (zOffset / 2);
+                GameObject newItem = poolManager.GetComponent<ObjectPooling>().TakeObject();
+                newItem.transform.position = spawnPos;
+                newItem.SetActive(true);
+                Debug.Log("cc");
 
+            }
+
+            spawnTimer = Time.time;
+            zPos += zOffset;
+        }
     }
 
     //Random object in certain gap
-    private void RandomWithGap(int objectPrefab)
+    private void RandomWithGap()
     {
         /*
          * we need the time defining when we will continue spawning

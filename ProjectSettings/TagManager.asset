@@ -8,18 +8,14 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-<<<<<<< HEAD
-  - Ground
-=======
-  - player
->>>>>>> Gain_damage
+  - Player
   - Water
   - UI
+  - Ground
   - 
   - 
-  - Coins
-  - Obstacle
-  - Powerup
+  - 
+  - 
   - 
   - 
   - 
