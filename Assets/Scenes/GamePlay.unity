@@ -294,7 +294,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 822754088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ccb6254bf12bdb478afeba24ead8625, type: 3}
+  m_Script: {fileID: 11500000, guid: 1864ebfd4034ab245abab38d6bc092a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   count: 10
@@ -753,6 +753,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1081997311505493841, guid: d4eb9aa7a29110a4dae27288cbd3291b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d2c9c606c7be8194681f3fbfa154db01, type: 2}
     - target: {fileID: 7501680241240137038, guid: d4eb9aa7a29110a4dae27288cbd3291b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
