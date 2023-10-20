@@ -1,9 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: a49827f6c32e1094cba504319a3dddff
 folderAsset: yes
 timeCreated: 1457110892
 licenseType: Store
 DefaultImporter:
+=======
+guid: 0c093c26fbf9e8a41ba5099189597d95
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+>>>>>>> Gain_damage
   userData: 
   assetBundleName: 
   assetBundleVariant: 
