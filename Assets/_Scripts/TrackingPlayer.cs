@@ -8,22 +8,14 @@ public class TrackingPlayer : MonoBehaviour
     public Transform player;
     private NavMeshAgent agent;
 
-    private void Awake()
+    private void Start()
     {
-        player = GameObject.Find("Player").GetComponent<Transform>();
+        player = GameObject.Find("Capsule").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
         agent.destination = player.position;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            ObjectPooling.Instance.ReturnObject(gameObject);
-        }
     }
 }

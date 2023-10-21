@@ -5,17 +5,15 @@ using UnityEngine;
 
 public class ObjectPooling : MonoBehaviour
 {
-    public static ObjectPooling Instance;
     private bool expendable;
     [SerializeField] private int count;
     [SerializeField] private GameObject objectPool;
 
-    public List<GameObject> objectInPool;
-    public List<GameObject> usedList;
+    private List<GameObject> objectInPool;
+    private List<GameObject> usedList;
 
     private void Awake()
     {
-        Instance = this;
         objectInPool = new List<GameObject>();
         usedList = new List<GameObject>();
 
@@ -39,8 +37,8 @@ public class ObjectPooling : MonoBehaviour
 
     public void ReturnObject(GameObject obj)
     {
-        objectInPool.Add(obj);
-        usedList.Remove(obj);
+        objectInPool.Remove(obj);
+        usedList.Add(obj);
         obj.SetActive(false);
     }
 
