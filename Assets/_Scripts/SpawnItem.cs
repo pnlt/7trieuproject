@@ -8,27 +8,39 @@ public class SpawnITem : MonoBehaviour
     [SerializeField] private float zOffsetEnd; //base on the length of our map
     [SerializeField] private float _spawnTime;
     [SerializeField] private float zOffset;
+    public GameObject xValues;
 
-    //[SerializeField] private GameObject[] itemPrefab;
-    //[SerializeField] private GameObject _gameObject;
     [SerializeField] private GameObject poolManager;
 
     private float spawnTimer;
     private int objectTobeSpawned;
 
     private Vector3 spawnPos;
-    private float[] xPosValues = { -4, 0, 4 };
+
+    private float[] xPosValues = new float[3];
+    private List<Transform> getListX_Values = new List<Transform>();
     private float zPos;
     private float xPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        zPos = transform.position.z + zOffsetEnd;
-        spawnTimer = Time.time;
-
+        xValues = GameObject.Find("SetXValues");
         poolManager = GameObject.Find("PoolManager");
 
+        SetUpSpawn();
+    }
+
+    private void SetUpSpawn()
+    {
+        zPos = transform.position.z + zOffsetEnd;
+        spawnTimer = Time.time;
+        getListX_Values = xValues.GetComponent<X_Values>().GetX_Values();
+
+        for (int i = 0; i < xPosValues.Length; i++)
+        {
+            xPosValues[i] = getListX_Values[i].position.x;
+        }
     }
 
     // Update is called once per frame
@@ -40,6 +52,7 @@ public class SpawnITem : MonoBehaviour
     private void SpawnItemsRandomly()
     {
         LineRandomContinuously();
+        RandomWithGap();
     }
 
 
@@ -56,8 +69,6 @@ public class SpawnITem : MonoBehaviour
                 GameObject newItem = poolManager.GetComponent<ObjectPooling>().TakeObject();
                 newItem.transform.position = spawnPos;
                 newItem.SetActive(true);
-                Debug.Log("cc");
-
             }
 
             spawnTimer = Time.time;
@@ -80,17 +91,6 @@ public class SpawnITem : MonoBehaviour
          * 
          */
 
-        /* Illustrative code
-         * -----------------------------------------------------------
-         * if (pass the time to continue spawning):
-         *      xPos = Random.Range(three equally parts of the map's x-axis)
-         *      spawnPos = new Vector3 (xPos, transform.position.y, zPos);
-         *      GameObject item = ObjectPooling.TakeObject();
-         *      item.transform.position = spawnPos;
-         *      item.transform.setActive(true);
-         *      update zPos;  
-         */
-
         if (Time.time - spawnTimer > _spawnTime)
         {
             xPos = xPosValues[Mathf.RoundToInt(Random.Range(0, xPosValues.Length))];
@@ -102,9 +102,6 @@ public class SpawnITem : MonoBehaviour
             spawnTimer = Time.time;
         }
 
-
-
-        //GameObject item = Instantiate(itemPrefab[objectPrefab], )
     }
 }
 
