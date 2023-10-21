@@ -16,7 +16,6 @@ public class SpawnITem : MonoBehaviour
     private int objectTobeSpawned;
 
     private Vector3 spawnPos;
-
     private float[] xPosValues = new float[3];
     private List<Transform> getListX_Values = new List<Transform>();
     private float zPos;
