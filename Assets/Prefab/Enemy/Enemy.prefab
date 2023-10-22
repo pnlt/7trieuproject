@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 4485389997638718451}
   - component: {fileID: 281006673226594732}
   - component: {fileID: 6748617892403883899}
+  - component: {fileID: -282936051266622911}
   - component: {fileID: 1797950737543819776}
+  - component: {fileID: -1016346837111825313}
   - component: {fileID: 1763101225090339003}
   m_Layer: 0
   m_Name: Enemy
@@ -107,6 +109,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-282936051266622911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478198848724274167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71223fba63f009246aae7a406abf9dea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeCycle: 7
 --- !u!114 &1797950737543819776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +134,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a315a0f363f0dac479fc5ec63fdeeac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+--- !u!114 &-1016346837111825313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 478198848724274167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4041fb1a0ba8e94f9699429d6a0d962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  radius: 3.8
 --- !u!195 &1763101225090339003
 NavMeshAgent:
   m_ObjectHideFlags: 0

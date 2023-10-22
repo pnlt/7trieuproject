@@ -51,7 +51,7 @@ public class SpawnITem : MonoBehaviour
     private void SpawnItemsRandomly()
     {
         LineRandomContinuously();
-        RandomWithGap();
+        //RandomWithGap();
     }
 
 
@@ -66,8 +66,11 @@ public class SpawnITem : MonoBehaviour
                 spawnPos = new Vector3(xPos, transform.position.y, zPos);
                 zPos += (zOffset / 2);
                 GameObject newItem = poolManager.GetComponent<ObjectPooling>().TakeObject();
-                newItem.transform.position = spawnPos;
-                newItem.SetActive(true);
+                if (newItem)
+                {
+                    newItem.transform.position = spawnPos;
+                    newItem.SetActive(true);
+                }
             }
 
             spawnTimer = Time.time;
