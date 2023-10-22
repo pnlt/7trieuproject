@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class TrackingPlayer : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     private NavMeshAgent agent;
 
     private void Start()

@@ -183,7 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccb6254bf12bdb478afeba24ead8625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 7
+  expendable: 1
+  count: 6
   objectPool: {fileID: 478198848724274167, guid: 2d690ce0ddaaf7846aa9952a6b82197f, type: 3}
 --- !u!4 &336356368
 Transform:
@@ -618,8 +619,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zOffsetEnd: 70
-  _spawnTime: 2
+  _spawnTime: 3.5
   zOffset: 50
+  xValues: {fileID: 0}
   poolManager: {fileID: 0}
 --- !u!1 &1876690266
 GameObject:
@@ -631,6 +633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1876690270}
   - component: {fileID: 1876690269}
+  - component: {fileID: 1876690271}
   - component: {fileID: 1876690268}
   - component: {fileID: 1876690267}
   m_Layer: 3
@@ -729,6 +732,19 @@ Transform:
   - {fileID: 1737793019}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1876690271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876690266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cf495d6d3c37f348bc278d3ce941d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
 --- !u!1 &2120453733
 GameObject:
   m_ObjectHideFlags: 0

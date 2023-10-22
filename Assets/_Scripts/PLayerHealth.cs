@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PLayerHealth : MonoBehaviour
 {
+    [SerializeField] private float maxHealth;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,12 @@ public class PLayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (maxHealth == 0)
+            Debug.Log("Die");
+    }
+
+    public void GainDamage(float damage)
+    {
+        maxHealth -= damage;
     }
 }
