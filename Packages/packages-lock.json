@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.unity.ai.navigation": {
-      "version": "1.1.4",
+      "version": "1.1.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -25,7 +25,7 @@
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
-      "depth": 1,
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -46,7 +46,7 @@
     },
     "com.unity.ide.rider": {
       "version": "3.0.24",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.ext.nunit": "1.0.6"
@@ -55,7 +55,7 @@
     },
     "com.unity.ide.visualstudio": {
       "version": "2.0.18",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
@@ -64,7 +64,7 @@
     },
     "com.unity.ide.vscode": {
       "version": "1.2.5",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -85,7 +85,7 @@
     },
     "com.unity.test-framework": {
       "version": "1.1.33",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.ext.nunit": "1.0.6",
