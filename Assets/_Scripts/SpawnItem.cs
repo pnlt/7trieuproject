@@ -74,7 +74,7 @@ public class SpawnITem : MonoBehaviour
             }
 
             spawnTimer = Time.time;
-            zPos += zOffset;
+            //zPos += zOffset;
         }
     }
 
