@@ -9,13 +9,15 @@ public class SpawnITem : MonoBehaviour
     [SerializeField] private float _spawnTime;
     [SerializeField] private float zOffset;
     public GameObject xValues;
+    [SerializeField] private int maxEnemyNumber;
 
-    [SerializeField] private GameObject poolEnemyManager;
+    //[SerializeField] private GameObject poolEnemyManager;
+    [SerializeField] private GameObject poolManager;
+    //[SerializeField] private GameObject poolMaskManager;
 
     private float spawnTimer;
 
     private Vector3 spawnPos;
-
     private float[] xPosValues = new float[3];
     private List<Transform> getListX_Values = new List<Transform>();
     private float zPos;
@@ -25,8 +27,7 @@ public class SpawnITem : MonoBehaviour
     void Start()
     {
         xValues = GameObject.Find("SetXValues");
-        poolEnemyManager = GameObject.Find("PoolEnemyManager");
-
+        poolManager = GameObject.Find("PoolEnemyManager");
         SetUpSpawn();
     }
 
@@ -60,17 +61,28 @@ public class SpawnITem : MonoBehaviour
     {
         if (Time.time - spawnTimer > _spawnTime)
         {
+            int enemySpawned = Random.Range(1, maxEnemyNumber);
             xPos = xPosValues[Mathf.RoundToInt(Random.Range(0, xPosValues.Length))];
-            for (int i = 0; i < Random.Range(1, 3); i++)
+            for (int i = 0; i < enemySpawned; i++)
             {
                 spawnPos = new Vector3(xPos, transform.position.y, zPos);
                 zPos += (zOffset / 2);
-                GameObject newItem = poolEnemyManager.GetComponent<ObjectPooling>().TakeObject();
+                GameObject newItem = poolManager.GetComponent<ObjectPooling>().TakeObject(enemySpawned - i);
+
+                //GameObject newItem = poolEnemyManager.GetComponent<ObjectPooling>().TakeObject();
+
                 if (newItem)
                 {
                     newItem.transform.position = spawnPos;
                     newItem.SetActive(true);
                 }
+
+                /*GameObject newMask = poolMaskManager.GetComponent<ObjectPooling>().TakeObject();
+                if (newMask)
+                {
+                    newMask.transform.position = spawnPos;
+                    newMask.SetActive(true);
+                }*/
             }
 
             spawnTimer = Time.time;
@@ -78,4 +90,3 @@ public class SpawnITem : MonoBehaviour
         }
     }
 }
-

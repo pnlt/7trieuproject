@@ -8,13 +8,15 @@ public class AttackPlayer : MonoBehaviour
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private float radius;
 
+    [SerializeField] private Transform player;
+
     private ObjectPooling pool;
-    RaycastHit hit;
 
 
     private void Start()
     {
         pool = transform.parent.GetComponent<ObjectPooling>();
+        player = GameObject.Find("Player").GetComponent<Transform>();
     }
 
     private void Update()
@@ -24,13 +26,13 @@ public class AttackPlayer : MonoBehaviour
 
     private void PlayerSensor()
     {
-        if (Physics.SphereCast(transform.position, radius, transform.forward, out hit, .1f, playerMask))
+        RaycastHit hit;
+        Vector3 direction = (player.position - transform.position).normalized;
+        if (Physics.SphereCast(transform.position, radius, direction, out hit, .5f, playerMask))
         {
-                hit.collider.gameObject.GetComponent<PLayerHealth>().GainDamage(damage);
-                pool.ReturnObject(gameObject);
-               
+            hit.collider.gameObject.GetComponent<PLayerHealth>().GainDamage(damage);
+            pool.ReturnObject(gameObject);
         }
-
     }
 
     private void OnDrawGizmos()
