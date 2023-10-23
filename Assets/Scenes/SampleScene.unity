@@ -1561,6 +1561,7 @@ Transform:
   - {fileID: 1827913074}
   - {fileID: 1557249963}
   - {fileID: 923816002}
+  - {fileID: 925911083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &561438496
@@ -2311,10 +2312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1864ebfd4034ab245abab38d6bc092a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expendable: 0
   count: 10
   objectPool: {fileID: 478198848724274167, guid: 2d690ce0ddaaf7846aa9952a6b82197f, type: 3}
-  objectInPool: []
-  usedList: []
 --- !u!4 &822754090
 Transform:
   m_ObjectHideFlags: 0
@@ -2621,7 +2621,8 @@ MonoBehaviour:
   _spawnTime: 3
   zOffset: 15
   xValues: {fileID: 114811785}
-  poolEnemyManager: {fileID: 822754088}
+  maxEnemyNumber: 10
+  poolManager: {fileID: 0}
 --- !u!1 &925911081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2648,11 +2649,11 @@ Transform:
   m_GameObject: {fileID: 925911081}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.7, y: -25.96732, z: 16}
+  m_LocalPosition: {x: -40.7, y: -26.96732, z: 16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 561438495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &925911084
 MonoBehaviour:
@@ -5024,7 +5025,6 @@ SceneRoots:
   - {fileID: 705507995}
   - {fileID: 841744677}
   - {fileID: 561438495}
-  - {fileID: 925911083}
   - {fileID: 233837770}
   - {fileID: 479236293}
   - {fileID: 2018702766}
