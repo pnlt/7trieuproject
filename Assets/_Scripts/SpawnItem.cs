@@ -9,11 +9,13 @@ public class SpawnITem : MonoBehaviour
     [SerializeField] private float _spawnTime;
     [SerializeField] private float zOffset;
     public GameObject xValues;
+    [SerializeField] private int maxEnemyNumber;
 
+    //[SerializeField] private GameObject poolEnemyManager;
     [SerializeField] private GameObject poolManager;
+    //[SerializeField] private GameObject poolMaskManager;
 
     private float spawnTimer;
-    private int objectTobeSpawned;
 
     private Vector3 spawnPos;
     private float[] xPosValues = new float[3];
@@ -25,8 +27,9 @@ public class SpawnITem : MonoBehaviour
     void Start()
     {
         xValues = GameObject.Find("SetXValues");
+        //poolEnemyManager = GameObject.Find("PoolEnemyManager");
+        //poolMaskManager = GameObject.Find("PoolMaskManager");
         poolManager = GameObject.Find("PoolManager");
-
         SetUpSpawn();
     }
 
@@ -60,50 +63,33 @@ public class SpawnITem : MonoBehaviour
     {
         if (Time.time - spawnTimer > _spawnTime)
         {
+            int enemySpawned = Random.Range(1, maxEnemyNumber);
             xPos = xPosValues[Mathf.RoundToInt(Random.Range(0, xPosValues.Length))];
-            for (int i = 0; i < Random.Range(2, 5); i++)
+            for (int i = 0; i < enemySpawned; i++)
             {
                 spawnPos = new Vector3(xPos, transform.position.y, zPos);
                 zPos += (zOffset / 2);
-                GameObject newItem = poolManager.GetComponent<ObjectPooling>().TakeObject();
+                GameObject newItem = poolManager.GetComponent<ObjectPooling>().TakeObject(enemySpawned - i);
+
+                //GameObject newItem = poolEnemyManager.GetComponent<ObjectPooling>().TakeObject();
+
                 if (newItem)
                 {
                     newItem.transform.position = spawnPos;
                     newItem.SetActive(true);
                 }
+
+                /*GameObject newMask = poolMaskManager.GetComponent<ObjectPooling>().TakeObject();
+                if (newMask)
+                {
+                    newMask.transform.position = spawnPos;
+                    newMask.SetActive(true);
+                }*/
             }
 
             spawnTimer = Time.time;
             //zPos += zOffset;
         }
-    }
-
-    //Random object in certain gap
-    private void RandomWithGap()
-    {
-        /*
-         * we need the time defining when we will continue spawning
-         * -----------------------------------------------------------------
-         * Our Ideas is:
-         * we will track the zPos where we start spawn object, then in process of spawning object randomly
-         * we need to change zPos respectively
-         * ------------------------------------------------------------------
-         * for xPos, we will choose randomly its values based on the width of our map 
-         * for yPos, we maintain it
-         * 
-         */
-
-        if (Time.time - spawnTimer > _spawnTime)
-        {
-            xPos = xPosValues[Mathf.RoundToInt(Random.Range(0, xPosValues.Length))];
-            spawnPos = new Vector3(xPos, transform.position.y, zPos);
-            zPos += zOffset;
-            GameObject newItem = poolManager.GetComponent<ObjectPooling>().TakeObject();
-            newItem.transform.position = spawnPos;
-            newItem.SetActive(true);
-            spawnTimer = Time.time;
-        }
-
     }
 }
 

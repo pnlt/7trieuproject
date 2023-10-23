@@ -20,18 +20,20 @@ public class ObjectPooling : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
-            GenerateObject();
+            GenerateObject(1);
         }
     }
 
-    public GameObject TakeObject()
+    public GameObject TakeObject(int enemyLack)
     {
         int totalCount = objectInPool.Count;
         if (totalCount == 0 && !expendable) return null;
-        else if (totalCount == 0) 
-            GenerateObject();
+        else if (totalCount == 0)
+        {
+            GenerateObject(enemyLack);
+            totalCount = objectInPool.Count;
+        }   
 
-        
         GameObject obj = objectInPool[totalCount - 1];
         objectInPool.RemoveAt(totalCount - 1);
         usedList.Add(obj);
@@ -45,12 +47,15 @@ public class ObjectPooling : MonoBehaviour
         obj.SetActive(false);
     }
 
-    private void GenerateObject()
+    private void GenerateObject(int enemyExtra)
     {
-        GameObject go = Instantiate(objectPool);
-        go.transform.parent = transform;
-        go.SetActive(false);
-        objectInPool.Add(go);
+        for (int i = 0; i < enemyExtra; i++)
+        {
+            GameObject go = Instantiate(objectPool);
+            go.transform.parent = transform;
+            go.SetActive(false);
+            objectInPool.Add(go);
+        }
     }
 }
 

@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Mask : MonoBehaviour
 {
     [SerializeField] private float _lifeCycle;
 
@@ -13,7 +12,6 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lifeTime = 0;
         pool = transform.parent.GetComponent<ObjectPooling>();
     }
 
@@ -27,7 +25,7 @@ public class Enemy : MonoBehaviour
         lifeTime += Time.deltaTime;
         if (lifeTime > _lifeCycle)
         {
-            pool.ReturnObject(gameObject);   
+            pool.ReturnObject(gameObject);
             lifeTime = 0;
         }
     }

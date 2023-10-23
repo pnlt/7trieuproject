@@ -8,10 +8,13 @@ public class TrackingPlayer : MonoBehaviour
     private Transform player;
     private NavMeshAgent agent;
 
+
     private void Start()
     {
         player = GameObject.Find("Capsule").GetComponent<Transform>();
+
         agent = GetComponent<NavMeshAgent>();
+
     }
 
     private void Update()

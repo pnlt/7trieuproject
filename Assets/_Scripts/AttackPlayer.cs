@@ -29,14 +29,9 @@ public class AttackPlayer : MonoBehaviour
         RaycastHit hit;
         Vector3 direction = (player.position - transform.position).normalized;
         if (Physics.SphereCast(transform.position, radius, direction, out hit, .5f, playerMask))
-        {
-            if (hit.collider.gameObject)
-            {
-                hit.collider.gameObject.GetComponent<PLayerHealth>().GainDamage(damage);
-                pool.ReturnObject(gameObject);
-            }
-                
-            
+        {    
+                hit.collider.gameObject.GetComponent<PlayerHealth>().GainDamage(damage);
+                pool.ReturnObject(gameObject);          
         }   
     }
 
