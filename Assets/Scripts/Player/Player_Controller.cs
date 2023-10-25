@@ -23,6 +23,11 @@ public class Player_Controller : MonoBehaviour
     public float running_Speed;
     public float jump_Force;
 
+    // Health System
+    public int maxHealth = 3;
+    private int currentHealth;
+    [SerializeField] private Image[] hearts;
+
     public bool isGrounded;
     public LayerMask groundLayer;
     public Transform groundCheck;
@@ -55,6 +60,20 @@ public class Player_Controller : MonoBehaviour
         isGameOver = false;
         isShieldActive = false;
         rigidbody = GetComponent<Rigidbody>();
+
+        // Health System Initialization
+        currentHealth = maxHealth;
+        UpdateHeartsUI();
+
+        PlayerPrefs.SetInt("total_masks", 0);
+    }
+
+    void UpdateHeartsUI()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].enabled = i < currentHealth;
+        }
     }
 
     // Update is called once per frame
@@ -63,7 +82,7 @@ public class Player_Controller : MonoBehaviour
     {
       
         if (!isGameStarted || !isGameOver) {
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) && !isGameOver) {
                // Debug.Log("Game is started");
                 isGameStarted = true;
                 player_Animator.SetInteger("isRunning", 1);
@@ -190,10 +209,17 @@ public class Player_Controller : MonoBehaviour
 
     private void OnCollisionEnter (Collision collision) {
         if (collision.gameObject.tag == "object" && !isShieldActive) {
-            isGameStarted = false;
-            isGameOver = true;
-          player_Animator.applyRootMotion = true;
-            player_Animator.SetInteger("isDied", 1);
+
+            currentHealth--;
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+                isGameStarted = false;
+                isGameOver = true;
+                player_Animator.applyRootMotion = true;
+                player_Animator.SetInteger("isDied", 1);
+            }
+            UpdateHeartsUI();
         }
     }
   
@@ -270,14 +296,16 @@ public class Player_Controller : MonoBehaviour
 
     private void AddExtraLife()
     {
-        // Increase player's remaining lives
-        lives++;
-
-        // Check if lives are at maximum
-        if (lives >= maxLives)
+        if (currentHealth < maxHealth)
         {
-            Debug.Log("Maximum lives reached. Cannot gain more lives.");
+            currentHealth++;
+            UpdateHeartsUI();
         }
+        else
+        {
+            Debug.Log("Maximum health reached. Cannot gain more hearts.");
+        }
+
     }
 
     private void ActivateShield()
