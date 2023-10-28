@@ -7,15 +7,16 @@ TagManager:
   - object
   - mask
   - PowerUp
+  - DeathZone
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - Player
   - Water
   - UI
-  - Player
-  - construction
+  - Ground
+  - Enemy
   - 
   - 
   - 
