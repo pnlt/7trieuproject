@@ -18,8 +18,9 @@ public class LeaderBoardManager : MonoBehaviour
 
         entryTemplate.gameObject.SetActive(false);
 
-        if (PlayerPrefs.GetString("highscoreTable") == null)
+        if (PlayerPrefs.GetString("highscoreTable") != null)
         {
+            Debug.Log("OK");
             string jsonString = PlayerPrefs.GetString("highscoreTable");
             Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
@@ -44,6 +45,7 @@ public class LeaderBoardManager : MonoBehaviour
         }
         else
         {
+            Debug.Log("OK2");
             highscoreEntriesList = new List<HighscoreEntry>()
             {
                 new HighscoreEntry{score = 0, name ="Player"},
