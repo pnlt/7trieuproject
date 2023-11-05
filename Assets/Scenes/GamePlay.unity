@@ -10720,7 +10720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9780f087bab106346bcfd4f7c6a1184f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectNotifyPanel: {fileID: 0}
+  effectNotifyPanel: {fileID: 53897789}
   congratText: {fileID: 0}
   tutorialPanel: {fileID: 92358076}
   hearts:
