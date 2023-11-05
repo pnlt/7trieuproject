@@ -18,7 +18,7 @@ public class LeaderBoardManager : MonoBehaviour
 
         entryTemplate.gameObject.SetActive(false);
 
-        if (PlayerPrefs.GetString("highscoreTable") == null)
+        if (PlayerPrefs.GetString("highscoreTable") != null)
         {
             string jsonString = PlayerPrefs.GetString("highscoreTable");
             Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
