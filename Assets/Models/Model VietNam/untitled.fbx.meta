@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: aifrontside
-    second: {fileID: 2063047164303327442, guid: 6c862ce73f2a1d142b4b43936ec84843, type: 3}
+    second: {fileID: 2100000, guid: 984023c67d827084cb3193a1580d3a02, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: airoof
-    second: {fileID: 836233228933725514, guid: 6c862ce73f2a1d142b4b43936ec84843, type: 3}
+    second: {fileID: 2100000, guid: 5f71aa5fc0b38b54995d542df47c7970, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: aiwall
-    second: {fileID: -549096558445171134, guid: 6c862ce73f2a1d142b4b43936ec84843, type: 3}
+    second: {fileID: 2100000, guid: 680bf615027dd814e872efbc6fb6493c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: aiwhitewall
-    second: {fileID: 4349597518118712955, guid: 6c862ce73f2a1d142b4b43936ec84843, type: 3}
+    second: {fileID: 2100000, guid: a95c661f6b1bc5c4092001703b9f60d7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
