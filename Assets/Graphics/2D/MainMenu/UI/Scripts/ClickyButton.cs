@@ -8,8 +8,13 @@ public class ClickyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     [SerializeField] private Sprite _default, _pressed;
     [SerializeField] private AudioClip _compressClip, _uncompressClip;
     [SerializeField] private AudioSource _source;
-    [SerializeField] private string sceneToLoad;
+    private SceneController _sceneController;
 
+
+    private void Start()
+    {
+        _sceneController = FindObjectOfType<SceneController>();
+    }
     public void OnPointerDown(PointerEventData eventData)
     {
         _img.sprite = _pressed;
@@ -21,7 +26,11 @@ public class ClickyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         _img.sprite = _default;
         _source.PlayOneShot(_uncompressClip);
 
-        // Load the specified scene
-        SceneTransitionManager.LoadScene(sceneToLoad);
+        // Load the next level using the SceneController
+        if (_sceneController != null)
+        {
+            _sceneController.NextLevel();
+        }
+
     }
 }
