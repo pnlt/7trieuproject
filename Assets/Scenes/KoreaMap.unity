@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maskToVisit: 10
   offsetLocation: {x: 0, y: 0, z: 0}
-  koreaPrefab: {fileID: 2223791786451448266, guid: 0e616bac3cf7b03428df7a1ce2d959fc, type: 3}
+  koreaPrefab: {fileID: 919132149155446097, guid: bd760c7e86234ef46adf4fb4bbf561b9, type: 3}
   player: {fileID: 561438495}
   highscoreEntry:
     score: 0
@@ -2678,7 +2678,7 @@ MonoBehaviour:
   running_Speed: 30
   jump_Force: 10
   speedIncreaseRate: 0.1
-  GameOverPanel: {fileID: 0}
+  GameOverPanel: {fileID: 1150555668}
   shieldPrefab: {fileID: 1049083399}
   shieldDuration: 0
   pauseGame: 0
