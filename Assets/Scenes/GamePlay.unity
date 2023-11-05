@@ -5500,10 +5500,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.49485552
+  m_Height: 3.0253224
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.03743981, y: 0.38458562, z: -0.0425843}
 --- !u!4 &561438495
 Transform:
   m_ObjectHideFlags: 0
@@ -5547,6 +5547,7 @@ MonoBehaviour:
   side_speed: 0
   running_Speed: 30
   jump_Force: 10
+  speedIncreaseRate: 0.1
   GameOverPanel: {fileID: 1661962221}
   shieldPrefab: {fileID: 1077329180}
   shieldDuration: 5

@@ -28,6 +28,7 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float side_speed;
     [SerializeField] private float running_Speed;
     [SerializeField] private float jump_Force;
+    [SerializeField] private float speedIncreaseRate = 0.1f;
 
     [Header ("Gameobjects reference")]
     [SerializeField] private GameObject GameOverPanel;
@@ -64,10 +65,11 @@ public class Player_Controller : MonoBehaviour
     private float originalRunningSpeed;
     private float speedBoostMultiplier = 1.5f;
     private float speedBoostDuration = 5.0f;
+    private float accumulatedSpeedIncrease = 0;
     //Shield paremeters effect
     private Coroutine getShield; 
     public bool hasShield;
-    private float timePass = .1f;
+    private float timePass = .5f;
 
     private float distance;
     private float distancePerSecond = 0;
@@ -200,6 +202,15 @@ public class Player_Controller : MonoBehaviour
 
             distance = CalculateDistance();
             gameManager.distanceTravese = distance;
+
+            if (!isSpeedBoostActive)
+            {
+
+                float currentIncrease = speedIncreaseRate * Time.deltaTime;
+                running_Speed += currentIncrease;
+                accumulatedSpeedIncrease += currentIncrease;
+
+            }
         }
     }
 
@@ -236,13 +247,12 @@ public class Player_Controller : MonoBehaviour
     {
         if (!pauseGame)
         {
-            timePass *= Time.timeScale;
             timePass -= Time.deltaTime;
 
             if (timePass < 0)
             {
                 distancePerSecond += 1;
-                timePass = 0.1f;
+                timePass = 0.5f - (0.2f * accumulatedSpeedIncrease);
             }
         }
        
@@ -254,8 +264,8 @@ public class Player_Controller : MonoBehaviour
         isGameOver = gameManager.GetGameOver();
         if (isGameOver)
         {
-            //sua con c
             gameManager.SetGameOver(false);
+            gameManager.SetGameStart(false);
             gameManager.SetGamePause(true);
             gameManager.SetBestScore((int)distance);
             uiManager.ShowUpGameOverPanel();
@@ -291,7 +301,7 @@ public class Player_Controller : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag(POWERUP_TAG))
+        if (other.gameObject.CompareTag(POWERUP_TAG) && !pauseGame)
         {
             StartCoroutine(ShowUpEffect());
         }
@@ -314,15 +324,17 @@ public class Player_Controller : MonoBehaviour
 
     #region EffectsHandler  
 
-    private IEnumerator ShowUpEffect()
+    public IEnumerator ShowUpEffect()
     {
         ApplyRandomPowerUp();
         gameManager.SetGamePause(true);
         uiManager.SetTextEffectPanel(powerUpType.ToString());
         uiManager.ShowUpEffectNotify();
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
 
+
+        StopCoroutine(ShowUpEffect());
         gameManager.SetGamePause(false);
         uiManager.HideEffectPanel();
         OnPowerUpSelected(powerUpType);
@@ -332,6 +344,7 @@ public class Player_Controller : MonoBehaviour
     {
         if (!pauseGame)
         {
+            Debug.Log("apply");
             float randomValue = UnityEngine.Random.value;
 
             if (randomValue < 0.1f)  // 60% chance for SpeedBoost
@@ -355,12 +368,15 @@ public class Player_Controller : MonoBehaviour
         {
             case PowerUp.SpeedBoost:
                 ActivateSpeedBoost();
+                Debug.Log("speed");
                 break;
             case PowerUp.ExtraLife:
                 AddExtraLife();
+                Debug.Log("Extra");
                 break;
             case PowerUp.Shield:
                 ActivateShield();
+                Debug.Log("shield");
                 break;
         }
     }
@@ -379,6 +395,7 @@ public class Player_Controller : MonoBehaviour
             // Restore the original running speed after a short delay
             StartCoroutine(RestoreOriginalRunningSpeedAfterDelay(speedBoostDuration));
         }
+        powerUpType = PowerUp.Default;
 
     }
     private IEnumerator RestoreOriginalRunningSpeedAfterDelay(float delay)
@@ -386,7 +403,7 @@ public class Player_Controller : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Restore the original running speed
-        running_Speed = originalRunningSpeed;
+        running_Speed = originalRunningSpeed + accumulatedSpeedIncrease;
 
         // Set the speed boost as inactive
         isSpeedBoostActive = false;
@@ -403,6 +420,7 @@ public class Player_Controller : MonoBehaviour
         {
             Debug.Log("Maximum health reached. Cannot gain more hearts.");
         }
+        powerUpType = PowerUp.Default;
     }
 
     public void ActivateShield()
