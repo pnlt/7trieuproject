@@ -2677,6 +2677,7 @@ MonoBehaviour:
   side_speed: 0
   running_Speed: 30
   jump_Force: 10
+  speedIncreaseRate: 0.1
   GameOverPanel: {fileID: 0}
   shieldPrefab: {fileID: 1049083399}
   shieldDuration: 0
@@ -4070,8 +4071,8 @@ MonoBehaviour:
   - {fileID: 1484285500}
   - {fileID: 1143159557}
   - {fileID: 1575264887}
-  gameOverPanel: {fileID: 0}
-  visitPanel: {fileID: 0}
+  gameOverPanel: {fileID: 1150555668}
+  visitPanel: {fileID: 92027088}
   pausePanel: {fileID: 774201724}
 --- !u!4 &955312680
 Transform:
