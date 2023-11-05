@@ -17,51 +17,30 @@ public class LeaderBoardManager : MonoBehaviour
         entryTemplate = entryContainer.Find("highScoreEntryTemplate");
 
         entryTemplate.gameObject.SetActive(false);
-
-        if (PlayerPrefs.GetString("highscoreTable") != null)
+        if (PlayerPrefs.HasKey("highscoreTable"))
         {
             string jsonString = PlayerPrefs.GetString("highscoreTable");
             Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 
-            for (int i = 0; i < highscores.highscoreEntriesList.Count; i++)
-            {
-                for (int j = i + 1; j < highscores.highscoreEntriesList.Count; j++)
-                {
-                    if (highscores.highscoreEntriesList[j].score > highscores.highscoreEntriesList[i].score)
-                    {
-                        HighscoreEntry tmp = highscores.highscoreEntriesList[i];
-                        highscores.highscoreEntriesList[i] = highscores.highscoreEntriesList[j];
-                        highscores.highscoreEntriesList[j] = tmp;
-                    }
-                }
-            }
+            highscoreEntriesList = highscores.highscoreEntriesList;
+
+            // Sort the list by score
+            highscoreEntriesList.Sort((a, b) => b.score.CompareTo(a.score));
 
             highscoreEntryTransformList = new List<Transform>();
-            foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntriesList)
+            int maxEntriesToShow = Mathf.Min(highscoreEntriesList.Count, 7); // Limit to the top 10 entries
+            for (int i = 0; i < maxEntriesToShow; i++)
             {
-                CreateHighScoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+                CreateHighScoreEntryTransform(highscoreEntriesList[i], entryContainer, highscoreEntryTransformList);
             }
         }
         else
         {
+            Debug.Log("No high scores found.");
             highscoreEntriesList = new List<HighscoreEntry>()
             {
-                new HighscoreEntry{score = 0, name ="Player"},
+                new HighscoreEntry { score = 0, name = "Player" },
             };
-
-            //Sort entry list by score
-            for (int i = 0; i < highscoreEntriesList.Count; i++)
-            {
-                for (int j = i + 1; j < highscoreEntriesList.Count; j++)
-                {
-                    if (highscoreEntriesList[j].score > highscoreEntriesList[i].score)
-                    {
-                        HighscoreEntry tmp = highscoreEntriesList[i];
-                        highscoreEntriesList[i] = highscoreEntriesList[j];
-                        highscoreEntriesList[j] = tmp;
-                    }
-                }
-            }
 
             highscoreEntryTransformList = new List<Transform>();
             foreach (HighscoreEntry highscoreEntry in highscoreEntriesList)
@@ -73,8 +52,8 @@ public class LeaderBoardManager : MonoBehaviour
             string json = JsonUtility.ToJson(highscore);
             PlayerPrefs.SetString("highscoreTable", json);
             PlayerPrefs.Save();
-        }
-    }
+        }   
+}
 
     private void CreateHighScoreEntryTransform(HighscoreEntry highscore, Transform container, List<Transform> transformList)
     {
