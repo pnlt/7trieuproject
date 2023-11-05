@@ -4031,7 +4031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectNotifyPanel: {fileID: 1176945561}
-  congratText: {fileID: 0}
+  congratText: {fileID: 1626169973}
   tutorialPanel: {fileID: 92358076}
   hearts:
   - {fileID: 1484285500}
