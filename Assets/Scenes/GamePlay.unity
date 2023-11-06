@@ -10677,8 +10677,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zOffsetSpawn: 120
-  _spawnTime: 3
-  maxEnemyNumber: 3
+  _spawnTime: 5
+  maxEnemyNumber: 2
   poolManager: {fileID: 0}
   xValues: {fileID: 114811785}
 --- !u!4 &927658471 stripped
@@ -10720,8 +10720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9780f087bab106346bcfd4f7c6a1184f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effectNotifyPanel: {fileID: 0}
-  congratText: {fileID: 0}
+  effectNotifyPanel: {fileID: 53897789}
+  congratText: {fileID: 681282426}
   tutorialPanel: {fileID: 92358076}
   hearts:
   - {fileID: 1484285500}
