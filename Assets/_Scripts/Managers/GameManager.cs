@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     private bool isGameOVer;
     private bool isGameStarted;
     private bool isPaused;
+    private bool isTutorialGamePlay;
     private bool startSwitchMap;
 
     public bool GetGameOver()
@@ -35,6 +36,10 @@ public class GameManager : MonoBehaviour
     public bool GetGameStart()
     {
         return this.isGameStarted;
+    }
+    public bool GetIsTutorialGamePlay()
+    {
+        return this.isTutorialGamePlay;
     }
 
     public bool GetGamePause()
@@ -86,7 +91,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        PlayerPrefs.DeleteKey("firstPlay");
         uiManager = UI_Manager._instance;
+        if (!PlayerPrefs.HasKey("firstPlay"))
+        {
+            isTutorialGamePlay = true;
+            PlayerPrefs.SetInt("firstPlay", 0);
+            uiManager.ShowUpTutorialGamePlay();
+        }
     }
 
     // Update is called once per frame
