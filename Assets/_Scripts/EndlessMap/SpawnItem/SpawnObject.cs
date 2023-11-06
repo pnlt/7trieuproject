@@ -58,7 +58,8 @@ public class SpawnObject : MonoBehaviour
     //Random object continuously in one line
     private void LineRandomContinuously()
     {
-        if (Time.time - spawnTimer > _spawnTime)
+        spawnTimer += Time.deltaTime;
+        if (spawnTimer >= _spawnTime)
         {
             int enemySpawned = Random.Range(1, maxEnemyNumber);
             xPos = xPosValues[Mathf.RoundToInt(Random.Range(0, xPosValues.Length))];
@@ -82,7 +83,7 @@ public class SpawnObject : MonoBehaviour
                     newEnemy.SetActive(true);
                 }
             }
-            spawnTimer = Time.time;
+            spawnTimer = 0;
         }
     }
 }

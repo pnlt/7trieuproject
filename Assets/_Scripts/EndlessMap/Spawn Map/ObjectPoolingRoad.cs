@@ -12,10 +12,10 @@ public class ObjectPoolingRoad : MonoBehaviour
     public static ObjectPoolingRoad instance;
     
 
-    private List<GameObject> pooledObjects = new List<GameObject>();
+    private List<GameObject> pooledObjects;
     private int amountToPool = 5;
+    private int currentMapIdx; 
 
-    private int currentMapIdx;
     private void Awake()
     {
         if (instance == null)
@@ -25,6 +25,7 @@ public class ObjectPoolingRoad : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pooledObjects = new List<GameObject>();
         currentMapIdx = 0;
         for (int i = 0; i < amountToPool; i++)
         {
@@ -45,17 +46,18 @@ public class ObjectPoolingRoad : MonoBehaviour
             if (!pooledObjects[i].activeInHierarchy)
             {
                 objectTaken = pooledObjects[i];
-                pooledObjects.RemoveAt(i);
                 break;
             }
         }
 
-        /*if (objectTaken == null)
+        if (objectTaken == null)
         {
-            objectTaken = Instantiate(pooledPrefabs[currentMapIdx]);
-            objectTaken.transform.parent = GameObject.Find(pooledPrefabs[currentMapIdx].name).transform;
-            objectTaken.SetActive(false);
-        }*/
+            GameObject go = Instantiate(pooledPrefabs[currentMapIdx]);
+            go.transform.parent = GameObject.Find(pooledPrefabs[currentMapIdx].name).transform;
+            go.SetActive(false);
+            pooledObjects.Add(go);
+            objectTaken = go;
+        }
         return objectTaken;
     }
 
@@ -70,6 +72,7 @@ public class ObjectPoolingRoad : MonoBehaviour
             {
                 currentMapIdx += 1;
                 pooledObjects.Clear();
+                pooledObjects = new List<GameObject>();
             }
             
         }
