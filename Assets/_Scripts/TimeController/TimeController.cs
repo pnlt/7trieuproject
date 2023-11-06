@@ -24,12 +24,17 @@ public class TimeController : MonoBehaviour
     private DateTime currentTime;
     private TimeSpan sunriseTime;
     private TimeSpan sunsetTime;
+
+    private GameManager gameManager;
+
     void Start()
     {
         currentTime = DateTime.Now.Date + TimeSpan.FromHours(startHour);
 
         sunriseTime = TimeSpan.FromHours(sunriseHour);
         sunsetTime = TimeSpan.FromHours(sunsetHour);
+
+        gameManager = GameManager._instance;
     }
 
     // Update is called once per frame
@@ -42,13 +47,17 @@ public class TimeController : MonoBehaviour
 
     private void UpdateTimeOfDay()
     {
-        currentTime = currentTime.AddSeconds(Time.deltaTime * timeMultiplier);
-
-        if (timeText != null )
+        if (gameManager.GetGameStart() && !gameManager.GetGameOver() && !gameManager.GetGamePause())
         {
-            timeText.text = currentTime.ToString("HH:mm");
+            currentTime = currentTime.AddSeconds(Time.deltaTime * timeMultiplier);
+
+            if (timeText != null)
+            {
+                timeText.text = currentTime.ToString("HH:mm");
+            }
         }
     }
+    
 
     private void RotateSun()
     {
