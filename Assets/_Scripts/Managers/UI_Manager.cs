@@ -17,8 +17,16 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject visitPanel;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject tutorialGamePlay;
     [SerializeField] private Sprite[] effectSprites;
     [SerializeField] private Image effectSymbol;
+
+    [Space (5)]
+    [Header ("TutorialUI")]
+    [SerializeField] private GameObject swipeRightPanel;
+    [SerializeField] private GameObject swipeLeftPanel;
+    [SerializeField] private GameObject swipeTopPanel;
+
 
     private void Awake()
     {
@@ -30,6 +38,33 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    public void ShowUpswipeRightPanel()
+    {
+        swipeRightPanel.SetActive(true);
+    }
+
+    public void HideswipeRightPanel()
+    {
+        swipeRightPanel.SetActive(false);
+    }
+    public void ShowUpswipeLeftPanel()
+    {
+        swipeLeftPanel.SetActive(true);
+    }
+
+    public void HideswipeLeftPanel()
+    {
+        swipeLeftPanel.SetActive(false);
+    }
+    public void ShowUpswipeTopPanel()
+    {
+        swipeTopPanel.SetActive(true);
+    }
+
+    public void HideswipeTopPanel()
+    {
+        swipeTopPanel.SetActive(false);
+    }
     public GameObject GetEffectNotifyPanel()
     {
         return effectNotifyPanel;
@@ -43,6 +78,15 @@ public class UI_Manager : MonoBehaviour
     public void HideEffectPanel()
     {
         effectNotifyPanel.SetActive(false);
+    }
+    public void ShowUpTutorialGamePlay()
+    {
+        tutorialGamePlay.SetActive(true);
+    }
+
+    public void HideTutorialGamePlay()
+    {
+        tutorialGamePlay.SetActive(false);
     }
 
     public void ShowTutorialPanel()

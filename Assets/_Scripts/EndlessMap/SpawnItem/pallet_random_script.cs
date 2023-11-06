@@ -12,6 +12,7 @@ public class pallet_random_script : MonoBehaviour
 
     void Start()
     {
+        isDefault = true;
         if (!isDefault)
         {
             int random_value = Random.Range(0, difficults.Length);

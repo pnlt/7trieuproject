@@ -1544,7 +1544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2398097a9f201584b9340f68ac90e932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Road_Tile: {fileID: 8687180118915921771, guid: 0b184c0d3f41b9b4eb8863316d55289f, type: 3}
+  Road_Default: []
+  pooledPrefabs: []
+  maskThreshold: 
 --- !u!4 &269096071
 Transform:
   m_ObjectHideFlags: 0
@@ -2785,11 +2787,9 @@ MonoBehaviour:
   running_Speed: 30
   jump_Force: 10
   speedIncreaseRate: 0.1
-  GameOverPanel: {fileID: 1661962221}
   shieldPrefab: {fileID: 1077329180}
   shieldDuration: 0
   pauseGame: 0
-  hasShield: 0
 --- !u!54 &561438497
 Rigidbody:
   m_ObjectHideFlags: 0

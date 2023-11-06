@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlay.unity
     guid: c731d27bccd83d849bef9259c6e96cf4
   - enabled: 1
-    path: Assets/Scenes/KoreaMap.unity
+    path: Assets/Scenes/KoreaMap (DEO DUNG).unity
     guid: c56b7a2841230574fa309a8b240e352a
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 352affdfb208b6d499e7e25a4056372d, type: 2}
