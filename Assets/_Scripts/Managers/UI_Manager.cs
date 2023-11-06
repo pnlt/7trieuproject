@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Localization.LocalizationTableCollection;
 
 public class UI_Manager : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private Image[] hearts;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject visitPanel;
-    [SerializeField] private GameObject pausePanel;  
+    [SerializeField] private GameObject pausePanel;
+    [SerializeField] private Sprite[] effectSprites;
+    [SerializeField] private Image effectSymbol;
 
     private void Awake()
     {
@@ -64,7 +67,23 @@ public class UI_Manager : MonoBehaviour
 
     public void SetTextEffectPanel(string effect)
     {
-        congratText.text = "Congratulation! You gained " + effect;
+        congratText.text = effect;
+    }
+
+    public void SetSpriteEffects(PowerUp effectTypes)
+    {
+        switch (effectTypes)
+        {
+            case PowerUp.SpeedBoost:
+                effectSymbol.sprite = effectSprites[0];
+                break;
+            case PowerUp.ExtraLife:
+                effectSymbol.sprite = effectSprites[1];
+                break;
+            case PowerUp.Shield:
+                effectSymbol.sprite = effectSprites[2];
+                break;
+        }
     }
 
     public void UpdateHeartsUI(int currentHealth)

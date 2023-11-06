@@ -328,6 +328,7 @@ public class Player_Controller : MonoBehaviour
         ApplyRandomPowerUp();
         gameManager.SetGamePause(true);
         uiManager.SetTextEffectPanel(powerUpType.ToString());
+        uiManager.SetSpriteEffects(powerUpType);
         uiManager.ShowUpEffectNotify();
 
         yield return new WaitForSeconds(1f);
