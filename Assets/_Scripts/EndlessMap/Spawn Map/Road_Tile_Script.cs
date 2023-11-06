@@ -17,7 +17,7 @@ public class Road_Tile_Script : MonoBehaviour
             GameObject road_tile = ObjectPoolingRoad.instance.GetPooledObject();
             if (road_tile != null)
             {
-                road_tile.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 58f * 3);
+                road_tile.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 58f * 4);
                 road_tile.SetActive(true);
             }
             this.gameObject.SetActive(false);
