@@ -31,7 +31,6 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float speedIncreaseRate = 0.1f;
 
     [Header ("Gameobjects reference")]
-    [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject shieldPrefab;
 
     [Space (4)]
@@ -50,13 +49,15 @@ public class Player_Controller : MonoBehaviour
     public bool isGameOver { get; private set; }
     public bool isShieldActive { get; private set; }
     public bool pauseGame;
+    public bool isTutorial;
 
-    private static bool tap, swipeLeft, swipeRight;
+    private static bool tap, swipeLeft, swipeRight, swipeTop;
     private Vector2 startTouch, swipeDelta;
     private bool isDraging = false;
     private int desiredLane = 1; //0: left 1:center 2:right
     private bool isGrounded;
     private bool isSpeedBoostActive = false;
+    private bool isInTutorial;
 
     //Effects in game
     private string POWERUP_TAG = "PowerUp";
@@ -68,7 +69,7 @@ public class Player_Controller : MonoBehaviour
     private float accumulatedSpeedIncrease = 0;
     //Shield paremeters effect
     private Coroutine getShield; 
-    public bool hasShield;
+    private bool hasShield;
     private float timePass = .5f;
 
     private float distance;
@@ -100,6 +101,7 @@ public class Player_Controller : MonoBehaviour
     {
         isGameStarted = gameManager.GetGameStart();
         pauseGame = gameManager.GetGamePause();
+        isTutorial = gameManager.GetIsTutorialGamePlay();
 
         if (pauseGame)
             player_Animator.SetInteger("isRunning", 0);
@@ -107,98 +109,19 @@ public class Player_Controller : MonoBehaviour
         if (isGameStarted && !pauseGame)
         {
             SetUpAnimStart();
-
-            isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, groundLayer);
-            swipeLeft = swipeRight = false;
-
-            #region Standalone Inputs
-            if (Input.GetMouseButtonDown(0))
-            {
-                isDraging = true;
-                startTouch = Input.mousePosition;
-            }
-            else if (Input.GetMouseButtonUp(0))
-            {
-                isDraging = false;
-                Reset();
-            }
-            #endregion
-
-            #region Mobile Input
-            if (Input.touches.Length > 0)
-            {
-                if (Input.touches[0].phase == TouchPhase.Began)
-                {
-                    isDraging = true;
-                    startTouch = Input.touches[0].position;
-                }
-                else if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled)
-                {
-                    isDraging = false;
-                    Reset();
-                }
-            }
-            #endregion
-
-            swipeDelta = Vector2.zero;
-            if (isDraging)
-            {
-                if (Input.touches.Length < 0)
-                    swipeDelta = Input.touches[0].position - startTouch;
-                else if (Input.GetMouseButton(0))
-                    swipeDelta = (Vector2)Input.mousePosition - startTouch;
-            }
-
-            if (swipeDelta.magnitude > 100)
-            {
-                float x = swipeDelta.x;
-                float y = swipeDelta.y;
-                if (Mathf.Abs(x) > Mathf.Abs(y))
-                {
-                    //Swipe Left or Right
-                    if (x < 0)
-                    {
-                        desiredLane--;
-                        if (desiredLane == -1) desiredLane = 0;
-                    }
-                    else
-                    {
-                        desiredLane++;
-                        if (desiredLane == 3) desiredLane = 2;
-                    }
-                }
-                else
-                {
-                    if (isGrounded)
-                    {
-                        //Swipe Up or Down
-                        if (y < 0)
-                        {
-                            //null
-                        }
-                        else
-                        {
-                            rigid.velocity = Vector3.up * jump_Force;
-                            StartCoroutine(Jump());
-                        }
-                    }
-                }
-                Reset();
-            }
-
             Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
-                if (desiredLane == 0)
-                {
-                    targetPosition += Vector3.left * laneDistance;
-                }
-                if (desiredLane == 2)
-                {
-                    targetPosition += Vector3.right * laneDistance;
-                }
+            if (desiredLane == 0)
+            {
+                targetPosition += Vector3.left * laneDistance;
+            }
+            if (desiredLane == 2)
+            {
+                targetPosition += Vector3.right * laneDistance;
+            }
 
                 // Calculate the new position.
-                Vector3 newPosition = Vector3.Lerp(rigid.position, targetPosition, 10 * Time.deltaTime);
-                rigid.MovePosition(newPosition += -Vector3.back * Time.deltaTime * running_Speed);
+            Vector3 newPosition = Vector3.Lerp(rigid.position, targetPosition, 10 * Time.deltaTime);
+            rigid.MovePosition(newPosition += -Vector3.back * Time.deltaTime * running_Speed);        
 
             distance = CalculateDistance();
             gameManager.distanceTravese = distance;
@@ -216,11 +139,96 @@ public class Player_Controller : MonoBehaviour
 
     // Update is called once per frame
     private void Update()
-    { 
+    {
+        InputChecking();
         StartMotion();
         ApproachSwitchMap();
         GameOver();
     }
+
+    private void InputChecking()
+    {
+        isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, groundLayer);
+        swipeLeft = swipeRight = swipeTop = false;
+
+        #region Standalone Inputs
+        if (Input.GetMouseButtonDown(0))
+        {
+            isDraging = true;
+            startTouch = Input.mousePosition;
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            isDraging = false;
+            Reset();
+        }
+        #endregion
+
+        #region Mobile Input
+        if (Input.touches.Length > 0)
+        {
+            if (Input.touches[0].phase == TouchPhase.Began)
+            {
+                isDraging = true;
+                startTouch = Input.touches[0].position;
+            }
+            else if (Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled)
+            {
+                isDraging = false;
+                Reset();
+            }
+        }
+        #endregion
+
+        swipeDelta = Vector2.zero;
+        if (isDraging)
+        {
+            if (Input.touches.Length < 0)
+                swipeDelta = Input.touches[0].position - startTouch;
+            else if (Input.GetMouseButton(0))
+                swipeDelta = (Vector2)Input.mousePosition - startTouch;
+        }
+
+        if (swipeDelta.magnitude > 100)
+        {
+            float x = swipeDelta.x;
+            float y = swipeDelta.y;
+            if (Mathf.Abs(x) > Mathf.Abs(y))
+            {
+                //Swipe Left or Right
+                if (x < 0)
+                {
+                    swipeLeft = true;
+                    desiredLane--;
+                    if (desiredLane == -1) desiredLane = 0;
+                }
+                else
+                {
+                    swipeRight = true;
+                    desiredLane++;
+                    if (desiredLane == 3) desiredLane = 2;
+                }
+            }
+            else
+            {
+                if (isGrounded)
+                {
+                    //Swipe Up or Down
+                    if (y < 0)
+                    {
+                        //null
+                    }
+                    else
+                    {
+                        swipeTop = true;
+                        rigid.velocity = Vector3.up * jump_Force;
+                        StartCoroutine(Jump());
+                    }
+                }
+            }
+            Reset();
+        }
+    }    
 
     public void HanbokHolder(GameObject hanbok)
     {
@@ -320,6 +328,58 @@ public class Player_Controller : MonoBehaviour
             }
             player_Animator.SetTrigger("hitTrigger");
         }
+        else if (other.gameObject.CompareTag("Tutorial"))
+        {
+            if (other.gameObject.name == "Right")
+            {
+                gameManager.SetGamePause(true);
+                uiManager.ShowUpswipeRightPanel();
+            }
+            if (other.gameObject.name == "Left")
+            {
+                gameManager.SetGamePause(true);
+                uiManager.ShowUpswipeLeftPanel();
+            }
+            if (other.gameObject.name == "Top")
+            {
+                gameManager.SetGamePause(true);
+                uiManager.ShowUpswipeTopPanel();
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Tutorial"))
+        {
+            if (other.gameObject.name == "Right")
+            {
+                if (swipeRight)
+                {
+                    other.enabled = false;
+                    gameManager.SetGamePause(false);
+                    uiManager.HideswipeRightPanel();
+                }
+            }
+            if (other.gameObject.name == "Left")
+            {
+                if (swipeLeft)
+                {
+                    other.enabled = false;
+                    gameManager.SetGamePause(false);
+                    uiManager.HideswipeLeftPanel();
+                }
+            }
+            if (other.gameObject.name == "Top")
+            {
+                if (swipeTop)
+                {
+                    other.enabled = false;
+                    gameManager.SetGamePause(false);
+                    uiManager.HideswipeTopPanel();
+                }
+            }
+        }
     }
 
     #region EffectsHandler  
@@ -329,6 +389,7 @@ public class Player_Controller : MonoBehaviour
         ApplyRandomPowerUp();
         gameManager.SetGamePause(true);
         uiManager.SetTextEffectPanel(powerUpType.ToString());
+        uiManager.SetSpriteEffects(powerUpType);
         uiManager.ShowUpEffectNotify();
 
         yield return new WaitForSeconds(1f);
