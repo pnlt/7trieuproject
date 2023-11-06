@@ -31,7 +31,6 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float speedIncreaseRate = 0.1f;
 
     [Header ("Gameobjects reference")]
-    [SerializeField] private GameObject GameOverPanel;
     [SerializeField] private GameObject shieldPrefab;
 
     [Space (4)]
@@ -68,7 +67,7 @@ public class Player_Controller : MonoBehaviour
     private float accumulatedSpeedIncrease = 0;
     //Shield paremeters effect
     private Coroutine getShield; 
-    public bool hasShield;
+    private bool hasShield;
     private float timePass = .5f;
 
     private float distance;
