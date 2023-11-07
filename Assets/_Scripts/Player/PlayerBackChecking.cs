@@ -24,12 +24,15 @@ public class PlayerBackChecking : MonoBehaviour
 
         if (Physics.Raycast(rayBackward, out hit, 10f, virusMask, QueryTriggerInteraction.Collide))
         {
-            
-            if (hit.collider.gameObject.GetComponent<EnemyReturn>())
+
+            if (hit.collider.gameObject.GetComponent<EnemyReturn>()
+                || hit.collider.gameObject.GetComponent<EnemyMoving>())
+            {
                 hit.collider.gameObject.GetComponent<EnemyReturn>().LifeCoolDown();
-            hit.collider.gameObject.GetComponent<EnemyMoving>().SpeedUp(speedRate);
-            
-            
+                hit.collider.gameObject.GetComponent<EnemyMoving>().SpeedUp(speedRate);
+            }
+
+
         }
     }
 }
