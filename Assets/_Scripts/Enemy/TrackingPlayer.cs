@@ -1,54 +1,62 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class TrackingPlayer : MonoBehaviour
 {
+    [SerializeField] private float speed;
     private Transform player;
-    private NavMeshAgent agent;
     private GameManager gameManager;
     private bool pauseGame;
     private bool inGameProcess;
+    private Vector3 direction;
+    private Vector3 dm;
 
     private void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Transform>();
-        agent = GetComponent<NavMeshAgent>();
+
+    }
+    private void OnEnable()
+    {
+        transform.position = new Vector3(transform.position.x, transform.position.y - 0.9f, transform.position.z);
     }
 
     private void Start()
     {
         gameManager = GameManager._instance;
+        dm = Vector3.zero;
     }
 
     private void Update()
     {
-       
-        inGameProcess = gameManager.GetGameStart();
-        pauseGame = gameManager.GetGamePause();
-
-        if (pauseGame || !inGameProcess) { agent.speed = 0; }
-        else
-            agent.speed = 30;
-
-        if (gameObject.activeSelf == true && agent.isOnNavMesh)
-        {
-            agent.destination = player.position;
-        }
-        else
-        {
-            agent.Warp(player.position + new Vector3(0, 0, -100f));
-        }
-
-        
+        //transform.LookAt(player.position);
+        MovementBehaviour();
+        //transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
     }
 
-    private bool IsOnNM()
+    private void MovementBehaviour()
     {
-        NavMeshHit hit;
-        return NavMesh.SamplePosition(agent.transform.position, out hit, 10f, NavMesh.AllAreas);
+        Rotation();
+
+        pauseGame = gameManager.GetGamePause();
+        inGameProcess = gameManager.GetGameStart();
+        if (!pauseGame && inGameProcess)
+            transform.position += transform.forward * speed * Time.deltaTime;
+    }
+
+    private void Rotation()
+    {
+        Quaternion currentRotation = transform.rotation;
+
+        if (player)
+        {
+            direction = player.position - transform.position;
+            Quaternion target = Quaternion.LookRotation(direction);
+
+            transform.rotation = Quaternion.Lerp(currentRotation, target, 5f * Time.deltaTime);
+        }
     }
 }

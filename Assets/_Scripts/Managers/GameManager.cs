@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         uiManager = UI_Manager._instance;
+        PlayerPrefs.DeleteKey("firstPlay");
         if (!PlayerPrefs.HasKey("firstPlay"))
         {
             isTutorialGamePlay = true;

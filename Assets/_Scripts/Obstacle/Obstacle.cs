@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    Animator anim;
-    Collider colliderObject;
+    [SerializeField] private Animator anim;
+    [SerializeField] private Collider colliderObject;
 
     private void Start()
     {
@@ -15,8 +15,11 @@ public class Obstacle : MonoBehaviour
 
     private void OnDisable()
     {
-        anim.SetInteger("IsHit", 0);
-        colliderObject.enabled = true;
+        if (anim && colliderObject)
+        {
+            anim.SetInteger("IsHit", 0);
+            colliderObject.enabled = true;
+        }
     }
 
     public virtual void Impacted()

@@ -8832,13 +8832,9 @@ MonoBehaviour:
   expendable: 1
   count: 10
   objectSpawnRandom:
-  - name: Covid-1
-    prefabEnemy: {fileID: 478198848724274167, guid: 2d690ce0ddaaf7846aa9952a6b82197f, type: 3}
-    chance: 50
-    _weight: 0
   - name: Covid-2
     prefabEnemy: {fileID: 478198848724274167, guid: 2bc57da022c897c41abdab3524be71f3, type: 3}
-    chance: 50
+    chance: 26
     _weight: 0
 --- !u!4 &822754090
 Transform:

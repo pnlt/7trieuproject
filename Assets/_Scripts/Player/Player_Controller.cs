@@ -3,7 +3,6 @@ using System.Collections;
 using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Localization.LocalizationTableCollection;
 
 #region EffectsType
 public enum PowerUp
@@ -332,6 +331,7 @@ public class Player_Controller : MonoBehaviour
         else if (other.gameObject.CompareTag(Obstacle_Tag) && !isShieldActive)
         {
             player_Animator.SetInteger("isJump", 0);
+            rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y * -.5f);
             gameManager.SetGamePause(true);
             other.enabled = false;
 
