@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class pallet_random_script : MonoBehaviour
 {
-
-
     public GameObject[] difficults;
     public bool isDefault;
     private float reducePercent = 0.5f;
 
-    void Start()
+    private void OnDisable()
     {
-        isDefault = true;
+        isDefault = false;
         if (!isDefault)
         {
             int random_value = Random.Range(0, difficults.Length);

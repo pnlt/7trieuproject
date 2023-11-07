@@ -91,13 +91,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        PlayerPrefs.DeleteKey("firstPlay");
         uiManager = UI_Manager._instance;
         if (!PlayerPrefs.HasKey("firstPlay"))
         {
             isTutorialGamePlay = true;
             PlayerPrefs.SetInt("firstPlay", 0);
             uiManager.ShowUpTutorialGamePlay();
+        }
+        else
+        {
+            isTutorialGamePlay = false;
         }
     }
 
@@ -148,13 +151,14 @@ public class GameManager : MonoBehaviour
             MapConnect();
             startSwitchMap = false;
             //starts timeline
+            uiManager.ShowUptimelineOBPanel();
         }
     }
 
     private void MapConnect()
     {
         GameObject hanbok = Instantiate(koreaPrefab);
-        hanbok.transform.position = player.position + offsetLocation;
+        hanbok.transform.position += new Vector3(offsetLocation.x, offsetLocation.y, player.position.z + offsetLocation.z);
         player.GetComponent<Player_Controller>().HanbokHolder(hanbok);
     }
     #endregion
