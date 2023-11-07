@@ -180,20 +180,18 @@ public class Player_Controller : MonoBehaviour
                 }
                 else
                 {
-                    if (isGrounded)
-                    {
                         //Swipe Up or Down
-                        if (y < 0)
+                        if (y < 0 && !isGrounded)
                         {
-                            //null
+                            player_Animator.SetInteger("isJump", 0);
+                            rigid.velocity = Vector3.up * -5;
                         }
-                        else if (!swipeTopTuto)
+                        else if (y > 0 && !swipeTopTuto && isGrounded)
                         {
                             swipeTop = true;
                             rigid.velocity = Vector3.up * jump_Force;
                             StartCoroutine(Jump());
                         }
-                    }
                 }
                 Reset();
             }
@@ -333,6 +331,7 @@ public class Player_Controller : MonoBehaviour
         }
         else if (other.gameObject.CompareTag(Obstacle_Tag) && !isShieldActive)
         {
+            player_Animator.SetInteger("isJump", 0);
             gameManager.SetGamePause(true);
             other.enabled = false;
 
