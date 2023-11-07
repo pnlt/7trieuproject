@@ -392,6 +392,7 @@ public class Player_Controller : MonoBehaviour
             {
                 if (swipeTop)
                 {
+                    player_Animator.SetInteger("isJump", 1);
                     uiManager.HideswipeTopPanel();
                     gameManager.SetGamePause(false);
                 }

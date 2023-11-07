@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: aff3b33b0396f5c49999090fe581fc10
   - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
-    guid: c731d27bccd83d849bef9259c6e96cf4
+    path: Assets/Scenes/GamePlayVietNam.unity
+    guid: c804f60bb4ff19d4c86cc3fec51d9c14
+  - enabled: 1
+    path: Assets/Scenes/GamePlayKorea.unity
+    guid: a1353f74efc2d944b9a0d23ebe7050ab
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 352affdfb208b6d499e7e25a4056372d, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 1c044e79f0145b441baf7cd7ec7b7d3a, type: 2}
