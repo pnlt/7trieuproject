@@ -91,13 +91,17 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        PlayerPrefs.DeleteKey("firstPlay");
         uiManager = UI_Manager._instance;
+        PlayerPrefs.DeleteKey("firstPlay");
         if (!PlayerPrefs.HasKey("firstPlay"))
         {
             isTutorialGamePlay = true;
             PlayerPrefs.SetInt("firstPlay", 0);
             uiManager.ShowUpTutorialGamePlay();
+        }
+        else
+        {
+            isTutorialGamePlay = false;
         }
     }
 
