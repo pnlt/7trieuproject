@@ -748,7 +748,6 @@ GameObject:
   - component: {fileID: 6270131772997603302}
   - component: {fileID: 5972406917566985659}
   - component: {fileID: 1133860464500334779}
-  - component: {fileID: 4188553972846323819}
   m_Layer: 3
   m_Name: GroundPlane
   m_TagString: Untagged
@@ -843,25 +842,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &4188553972846323819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8194353081331416053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_OverrideArea: 0
-  m_Area: 0
-  m_OverrideGenerateLinks: 0
-  m_GenerateLinks: 0
-  m_IgnoreFromBuild: 0
-  m_ApplyToChildren: 0
-  m_AffectedAgents: ffffffff
 --- !u!1 &8687180118915921771
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,8 +852,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8085558431275442503}
   - component: {fileID: 3843800231058142054}
-  - component: {fileID: 8525404590804473970}
-  - component: {fileID: 4958067075991939457}
   m_Layer: 0
   m_Name: Hoi_An
   m_TagString: Untagged
@@ -912,51 +890,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b805c0d75f6ba028334d1f60b09e89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8525404590804473970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8687180118915921771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: -1372625422
-  m_CollectObjects: 3
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 255
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.05
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
-  m_BuildHeightMesh: 0
---- !u!114 &4958067075991939457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8687180118915921771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f66a24e92a2dc884486ab8509c614917, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  surface: {fileID: 8525404590804473970}
-  _timeToBake: 3.5
 --- !u!1001 &67723246115607330
 PrefabInstance:
   m_ObjectHideFlags: 0
