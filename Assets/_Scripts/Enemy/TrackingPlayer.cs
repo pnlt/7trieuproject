@@ -11,6 +11,8 @@ public class TrackingPlayer : MonoBehaviour
     private GameManager gameManager;
     private bool pauseGame;
     private bool inGameProcess;
+    private Vector3 direction;
+    private Vector3 dm;
 
     private void Awake()
     {
@@ -21,6 +23,7 @@ public class TrackingPlayer : MonoBehaviour
     private void Start()
     {
         gameManager = GameManager._instance;
+        dm = Vector3.zero;
     }
 
     private void Update()
