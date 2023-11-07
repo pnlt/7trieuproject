@@ -6,8 +6,8 @@ using UnityEngine.AI;
 
 public class TrackingPlayer : MonoBehaviour
 {
-    [SerializeField] private float speed;
     private Transform player;
+    private NavMeshAgent agent;
     private GameManager gameManager;
     private bool pauseGame;
     private bool inGameProcess;
@@ -17,11 +17,7 @@ public class TrackingPlayer : MonoBehaviour
     private void Awake()
     {
         player = GameObject.Find("Player").GetComponent<Transform>();
-
-    }
-    private void OnEnable()
-    {
-        transform.position = new Vector3(transform.position.x, transform.position.y - 0.9f, transform.position.z);
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Start()
@@ -32,31 +28,29 @@ public class TrackingPlayer : MonoBehaviour
 
     private void Update()
     {
-        //transform.LookAt(player.position);
-        MovementBehaviour();
-        //transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
-    }
-
-    private void MovementBehaviour()
-    {
-        Rotation();
-        
-        pauseGame = gameManager.GetGamePause();
+       
         inGameProcess = gameManager.GetGameStart();
-        if (!pauseGame && inGameProcess)
-            transform.position += transform.forward * speed * Time.deltaTime;
+        pauseGame = gameManager.GetGamePause();
+
+        if (pauseGame || !inGameProcess) { agent.speed = 0; }
+        else
+            agent.speed = 30;
+
+        if (gameObject.activeSelf == true && agent.isOnNavMesh)
+        {
+            agent.destination = player.position;
+        }
+        else
+        {
+            agent.Warp(player.position + new Vector3(0, 0, -100f));
+        }
+
+        
     }
 
-    private void Rotation()
+    private bool IsOnNM()
     {
-        Quaternion currentRotation = transform.rotation;
-
-        if (player)
-        {
-            direction = player.position - transform.position;
-            Quaternion target = Quaternion.LookRotation(direction);
-
-            transform.rotation = Quaternion.Lerp(currentRotation, target, 5f * Time.deltaTime);
-        }
+        NavMeshHit hit;
+        return NavMesh.SamplePosition(agent.transform.position, out hit, 10f, NavMesh.AllAreas);
     }
 }
