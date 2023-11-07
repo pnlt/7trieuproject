@@ -27,6 +27,10 @@ public class UI_Manager : MonoBehaviour
     [SerializeField] private GameObject swipeLeftPanel;
     [SerializeField] private GameObject swipeTopPanel;
 
+    [Space(5)]
+    [Header("TimeLine")]
+    [SerializeField] private GameObject timelineOBPanel;
+
 
     private void Awake()
     {
@@ -36,6 +40,11 @@ public class UI_Manager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void ShowUptimelineOBPanel()
+    {
+        timelineOBPanel.SetActive(true);
     }
 
     public void ShowUpswipeRightPanel()
