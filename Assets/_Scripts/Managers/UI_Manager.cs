@@ -138,6 +138,12 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    public void SetSwitchText(string text)
+    {
+        if (visitPanel.GetComponent<VisitActivate>())
+            visitPanel.GetComponent<VisitActivate>().SetTextNotifySwitch(text);
+    }
+
     public void UpdateHeartsUI(int currentHealth)
     {
         for (int i = 0; i < hearts.Length; i++)

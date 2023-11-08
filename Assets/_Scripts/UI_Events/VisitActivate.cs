@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class VisitActivate : MonoBehaviour
 {
     private GameManager gameManager;
+    [SerializeField] private TextMeshProUGUI notifyText;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +22,8 @@ public class VisitActivate : MonoBehaviour
         SceneController.instance.NextLevel("NextScene");
     }
 
-    public void OnClickDecline()
+    public void SetTextNotifySwitch(string text)
     {
-        gameObject.SetActive(false);
-        
+        notifyText.text = text;
     }
 }
