@@ -1,9 +1,29 @@
 fileFormatVersion: 2
-guid: 14e7f91bec99f084da7fa65cefa070d1
+guid: d44f641be15678c439e0ff910f575149
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aifrontside.001
+    second: {fileID: 2100000, guid: 984023c67d827084cb3193a1580d3a02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: airoof.001
+    second: {fileID: 2100000, guid: 5f71aa5fc0b38b54995d542df47c7970, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiwall.001
+    second: {fileID: 2100000, guid: 680bf615027dd814e872efbc6fb6493c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: aiwhitewall.001
+    second: {fileID: 2100000, guid: a95c661f6b1bc5c4092001703b9f60d7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
