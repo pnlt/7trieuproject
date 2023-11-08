@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static LeaderBoardManager;
 
 public class GameManager : MonoBehaviour
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour
     private UI_Manager uiManager;
 
     #region Encapsulation
-    private bool isGameOVer;
+    private bool isGameOver;
     private bool isGameStarted;
     private bool isPaused;
     private bool isTutorialGamePlay;
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public bool GetGameOver()
     {
-        return this.isGameOVer;
+        return this.isGameOver;
     }
 
     public bool GetGameStart()
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
 
     public void SetGameOver(bool status)
     {
-        this.isGameOVer = status;
+        this.isGameOver = status;
     }
 
     public void SetGameStart(bool status)
@@ -91,6 +93,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        PlayerPrefs.SetInt("total_masks", 0);
         uiManager = UI_Manager._instance;
         if (!PlayerPrefs.HasKey("firstPlay"))
         {
@@ -113,7 +116,7 @@ public class GameManager : MonoBehaviour
 
     private void StartEvent()
     {
-        if (Input.GetMouseButtonDown(0) && !isGameOVer)
+        if (Input.GetMouseButtonDown(0) && !isGameOver)
         {
             isGameStarted = true;
         }
@@ -146,11 +149,20 @@ public class GameManager : MonoBehaviour
     #region SwitchMap
     private void SwitchMapEvent()
     {
-        if (startSwitchMap)
+        if (startSwitchMap && !isGameOver)
         {
-            MapConnect();
-            startSwitchMap = false;
+            string text = "";
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                text = "Congratulation! You have collected enough masks.You will be transported to Korea map.";
+            }
+            else if (SceneManager.GetActiveScene().buildIndex == 2)
+            { 
+                text = "Congratulation! You have collected enough masks.You will be transported to VietNam map.";
+            }
+            //MapConnect();
             //starts timeline
+            uiManager.SetSwitchText(text);
             uiManager.ShowUptimelineOBPanel();
         }
     }
