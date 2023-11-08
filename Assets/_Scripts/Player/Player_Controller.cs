@@ -180,7 +180,7 @@ public class Player_Controller : MonoBehaviour
                 else
                 {
                         //Swipe Up or Down
-                        if (y < 0 && !isGrounded)
+                        if (y < 0 && !isGrounded )
                         {
                             player_Animator.SetInteger("isJump", 0);
                             rigid.velocity = Vector3.up * -5;
@@ -190,7 +190,15 @@ public class Player_Controller : MonoBehaviour
                             swipeTop = true;
                             rigid.velocity = Vector3.up * jump_Force;
                             StartCoroutine(Jump());
+                      
+
                         }
+                    //    else if (!isGrounded && rigid.velocity.y < 0)
+                    //{
+                       
+                    //        rigid.velocity = new Vector3(rigid.velocity.x, rigid.velocity.y * -0.8f, rigid.velocity.z);
+                        
+                    //}
                 }
                 Reset();
             }
@@ -311,8 +319,13 @@ public class Player_Controller : MonoBehaviour
 
     IEnumerator Jump()
     {
+
         player_Animator.SetInteger("isJump", 1);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.4f);
+        if (!isGrounded)
+        {
+            rigid.velocity = new Vector3(rigid.velocity.x, rigid.velocity.y * -0.1f, rigid.velocity.z);
+        }
         player_Animator.SetInteger("isJump", 0);
     }
 
