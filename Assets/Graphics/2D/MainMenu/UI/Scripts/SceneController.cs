@@ -14,26 +14,33 @@ public class SceneController : MonoBehaviour
     {
         instance = this;
     }
-    public void NextLevel()
+    public void NextLevel(string text)
     {
         if (canTransition)
         {
-            StartCoroutine(LoadLevel());
+            StartCoroutine(LoadLevel(text));
         }
     }
 
-    IEnumerator LoadLevel()
+    IEnumerator LoadLevel(string text)
     {
         canTransition = false;
         transitionCanvas.sortingOrder = 1;
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-        transitionAnim.SetTrigger("Start");
-
-        yield return new WaitForSeconds(1);
         canTransition = true;
         transitionCanvas.sortingOrder = 0;
+        if (text == "backHome") {
+            SceneManager.LoadScene(0);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 1 || SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
     }
     
 }

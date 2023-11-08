@@ -14,14 +14,10 @@ public class VisitActivate : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-               
-    }
 
     public void OnClickAccept()
     {
-        SceneManager.LoadScene(2);
+        SceneController.instance.NextLevel("NextScene");
     }
 
     public void OnClickDecline()
