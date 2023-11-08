@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ClickyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
@@ -29,7 +30,7 @@ public class ClickyButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
         // Load the next level using the SceneController
         if (_sceneController != null)
         {
-            _sceneController.NextLevel();
+            _sceneController.NextLevel("NextScene");
         }
 
     }
