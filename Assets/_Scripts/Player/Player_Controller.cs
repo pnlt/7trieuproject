@@ -49,6 +49,7 @@ public class Player_Controller : MonoBehaviour
     public bool isShieldActive { get; private set; }
     public bool pauseGame;
     public bool isTutorial;
+    private bool inSwitchMode;
 
     //Touch motions in game
     private static bool tap, swipeLeft, swipeRight, swipeTop;
@@ -99,7 +100,6 @@ public class Player_Controller : MonoBehaviour
         powerUpType = PowerUp.Default;
         isTutorial = gameManager.GetIsTutorialGamePlay();
         OnTutorial();
-        PlayerPrefs.SetInt("total_masks", 0);
     }
 
     private void Start()
@@ -114,7 +114,7 @@ public class Player_Controller : MonoBehaviour
 
     private void InputChecking()
     {
-        if (!isTutorial)
+        if (!isTutorial && isGameStarted)
         {
             isGrounded = Physics.CheckSphere(groundCheck.position, 0.1f, groundLayer);
             swipeLeft = swipeRight = swipeTop = false;
@@ -263,15 +263,23 @@ public class Player_Controller : MonoBehaviour
 
     private void ApproachSwitchMap()
     {
-        if (target)
+        inSwitchMode = gameManager.GetSwitchMap();
+        if (inSwitchMode)
+        {
+            running_Speed = 0;
+            gameManager.SetGamePause(true);
+            gameManager.SetGameStart(false);
+        }
+        /*if (target)
         {
             if (Vector3.Distance(transform.position, target.transform.position) < 15)
             {
                 running_Speed = 0;
                 gameManager.SetGamePause(true);
+                gameManager.SetGameStart(false);
                 //kick off some events
             }
-        }
+        }*/
     }
 
     private float CalculateDistance()
@@ -283,7 +291,7 @@ public class Player_Controller : MonoBehaviour
             if (timePass < 0)
             {
                 distancePerSecond += 1;
-                timePass = 0.5f - (0.2f * accumulatedSpeedIncrease);
+                timePass = 0.5f - (0.1f * accumulatedSpeedIncrease);
             }
         }
        
