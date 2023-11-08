@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.43424192, g: 0.4811309, b: 0.56203675, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427135, b: 0.56452316, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2649,7 +2649,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356cc751f850e614293ec7e564f96ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maskToVisit: 100
+  maskToVisit: 10
   offsetLocation: {x: -6, y: 0, z: 70}
   koreaPrefab: {fileID: 8312738360835481342, guid: 25115ff13ce40f548a57207f649030fa, type: 3}
   player: {fileID: 561438495}
@@ -8062,15 +8062,15 @@ RectTransform:
   m_GameObject: {fileID: 815210468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.72337, y: 1.1023, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 916241254}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.5, y: 43}
-  m_SizeDelta: {x: 319, y: 79.8}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 47}
+  m_SizeDelta: {x: 0, y: 79.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &815210470
 MonoBehaviour:
@@ -8092,7 +8092,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You have collected enough masks \ndo you want to move to another map?"
+  m_text: 'Congratulation! You have collected enough masks. You will be transported
+    to Korea.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8119,8 +8122,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.5
-  m_fontSizeBase: 37.5
+  m_fontSize: 38.19
+  m_fontSizeBase: 38.19
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8135,7 +8138,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 0
+  m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -9870,11 +9873,7 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 5213273836584485165, guid: ac098cab0a1f09b4ea7c91ee561dda90, type: 2}
-    value: {fileID: 1411474485}
-  - key: {fileID: -8052840563607050398, guid: ac098cab0a1f09b4ea7c91ee561dda90, type: 2}
-    value: {fileID: 1094225306}
+  m_SceneBindings: []
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1036878890
@@ -10543,7 +10542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1094225307
 RectTransform:
   m_ObjectHideFlags: 0
