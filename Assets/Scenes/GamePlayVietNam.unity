@@ -2776,7 +2776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 356cc751f850e614293ec7e564f96ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maskToVisit: 2
+  maskToVisit: 50
   offsetLocation: {x: -6, y: 0, z: 70}
   koreaPrefab: {fileID: 8312738360835481342, guid: 25115ff13ce40f548a57207f649030fa, type: 3}
   player: {fileID: 561438495}
@@ -5655,7 +5655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poisonInfected: {fileID: 927658473}
-  maxHealth: 100
+  maxHealth: 3
 --- !u!1 &563353860
 GameObject:
   m_ObjectHideFlags: 0
@@ -8264,11 +8264,11 @@ MonoBehaviour:
   objectSpawnRandom:
   - name: Covid-1
     prefabEnemy: {fileID: 478198848724274167, guid: 2d690ce0ddaaf7846aa9952a6b82197f, type: 3}
-    chance: 100
+    chance: 32
     _weight: 0
   - name: Covid-2
     prefabEnemy: {fileID: 478198848724274167, guid: 2bc57da022c897c41abdab3524be71f3, type: 3}
-    chance: 0
+    chance: 40
     _weight: 0
 --- !u!4 &822754090
 Transform:
@@ -8759,8 +8759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5622fe5648b0b41b1f051f5fa2fcc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zOffsetSpawn: 120
-  _spawnTime: 5
+  zOffsetSpawn: 200
+  _spawnTime: 3
   maxEnemyNumber: 2
   poolManager: {fileID: 0}
   xValues: {fileID: 114811785}
@@ -19171,7 +19171,7 @@ MonoBehaviour:
   pooledPrefabs:
   - {fileID: 8687180118915921771, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
   - {fileID: 3366172083133787335, guid: 80f2dde040904dc47aad6e039c108a87, type: 3}
-  maskThreshold: 0500000032000000
+  maskThreshold: 19000000e8030000
 --- !u!4 &1866227485
 Transform:
   m_ObjectHideFlags: 0

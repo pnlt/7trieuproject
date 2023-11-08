@@ -10978,9 +10978,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
-    - target: {fileID: 4958067075991939457, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: surface
-      value: 
+    - target: {fileID: 405561133749002721, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+      propertyPath: isDefault
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1759729989344277701, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
@@ -11029,6 +11029,10 @@ PrefabInstance:
     - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_Name
       value: Korea (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958067075991939457, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: surface
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
@@ -12083,6 +12087,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
+    - target: {fileID: 405561133749002721, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1759729989344277701, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
@@ -16271,10 +16279,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
-    - target: {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 680ff7ce2c188a34e88f8f0b8fb93cb2, type: 2}
+    - target: {fileID: 405561133749002721, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1759729989344277701, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
@@ -16331,6 +16339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Korea
       objectReference: {fileID: 0}
+    - target: {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 680ff7ce2c188a34e88f8f0b8fb93cb2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19576,6 +19588,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
+    - target: {fileID: 405561133749002721, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1759729989344277701, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
@@ -19738,6 +19754,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
+    - target: {fileID: 405561133749002721, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1759729989344277701, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
