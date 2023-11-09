@@ -44,7 +44,7 @@ public class EnemyMoving : MonoBehaviour
 
     public void SpeedUp(float increment)
     {
-        speedRate += increment;
+        speedRate += increment * .01f;
     }
 
     private void Rotation()
@@ -56,7 +56,7 @@ public class EnemyMoving : MonoBehaviour
             direction = player.position - transform.position;
             Quaternion target = Quaternion.LookRotation(direction);
 
-            transform.rotation = Quaternion.Lerp(currentRotation, target, 15f * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(currentRotation, target, 12f * Time.deltaTime);
         }
     }
 }
