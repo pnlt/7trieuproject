@@ -13,6 +13,8 @@ public class LeaderBoardManager : MonoBehaviour
 
     private void Awake()
     {
+        PlayerPrefs.SetInt("cc", 0);
+
         instance = this;
         entryTemplate = entryContainer.Find("highScoreEntryTemplate");
 

@@ -24,6 +24,7 @@ public class SpawnObject : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        yPos = transform.position.y;
         poolManager = GameObject.FindGameObjectWithTag("Pooling");
         playerController = GetComponentInParent<Player_Controller>();
         SetUpSpawn();
@@ -31,7 +32,6 @@ public class SpawnObject : MonoBehaviour
 
     private void SetUpSpawn()
     {
-        yPos = transform.position.y;
         spawnTimer = Time.time;
         getListX_Values = xValues.GetComponent<X_Values>().GetX_Values();
 
@@ -44,6 +44,7 @@ public class SpawnObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (playerController.isGameStarted)
             Invoke("SpawnItemsRandomly", 1);
     }

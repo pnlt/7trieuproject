@@ -11,6 +11,12 @@ public class EnemyMoving : MonoBehaviour
     private GameManager gameManager;
     private bool pauseGame;
     private bool inGameProcess;
+    private float speedRate;
+
+    private void OnEnable()
+    {
+        speedRate = 1f;
+    }
 
     private void Start()
     {
@@ -30,12 +36,15 @@ public class EnemyMoving : MonoBehaviour
         pauseGame = gameManager.GetGamePause();
         inGameProcess = gameManager.GetGameStart();
         if (!pauseGame && inGameProcess)
-            transform.position += transform.forward * speed * Time.deltaTime;
+        {
+            transform.position += new Vector3(transform.forward.x, 0, transform.forward.z) * speed * speedRate * Time.deltaTime;
+        }
+            
     }
 
     public void SpeedUp(float increment)
     {
-        speed += increment * Time.deltaTime;
+        speedRate += increment;
     }
 
     private void Rotation()
@@ -47,7 +56,7 @@ public class EnemyMoving : MonoBehaviour
             direction = player.position - transform.position;
             Quaternion target = Quaternion.LookRotation(direction);
 
-            transform.rotation = Quaternion.Lerp(currentRotation, target, 7f * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(currentRotation, target, 15f * Time.deltaTime);
         }
     }
 }
