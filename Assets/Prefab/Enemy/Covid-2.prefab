@@ -86,7 +86,8 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 64
-  radius: 0.3
+  radius: 0.45
+  gameManager: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &-369699577958614905
 MonoBehaviour:

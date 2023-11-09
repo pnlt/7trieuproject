@@ -7,6 +7,7 @@ public class AttackPlayer : MonoBehaviour
     [SerializeField] private float damage;
     [SerializeField] private LayerMask playerMask;
     [SerializeField] private float radius;
+    [SerializeField] private GameManager gameManager;
 
     [SerializeField] private Transform player;
 
@@ -15,6 +16,7 @@ public class AttackPlayer : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameManager._instance;
         pool = transform.parent.GetComponent<ObjectPoolingWithProbability>();
         player = GameObject.Find("Player").GetComponent<Transform>();
     }
@@ -22,6 +24,9 @@ public class AttackPlayer : MonoBehaviour
     private void Update()
     {
         PlayerSensor();
+
+        if (gameManager.GetSwitchMap())
+            gameObject.SetActive(false);
     }
 
     private void PlayerSensor()

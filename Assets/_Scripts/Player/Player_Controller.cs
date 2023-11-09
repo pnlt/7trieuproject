@@ -74,7 +74,7 @@ public class Player_Controller : MonoBehaviour
     private float timePass = .5f;
 
     private float distance;
-    private float distancePerSecond = 0;
+    private float distancePerSecond;
 
     //ObstacleLayerIndex
     private string Obstacle_Tag = "Obstacle";
@@ -97,6 +97,7 @@ public class Player_Controller : MonoBehaviour
         isGameOver = false;
         isShieldActive = false;
         hasShield = false;
+        distancePerSecond = gameManager.distanceContainer;
         powerUpType = PowerUp.Default;
         isTutorial = gameManager.GetIsTutorialGamePlay();
         OnTutorial();
@@ -193,12 +194,6 @@ public class Player_Controller : MonoBehaviour
                       
 
                         }
-                    //    else if (!isGrounded && rigid.velocity.y < 0)
-                    //{
-                       
-                    //        rigid.velocity = new Vector3(rigid.velocity.x, rigid.velocity.y * -0.8f, rigid.velocity.z);
-                        
-                    //}
                 }
                 Reset();
             }
@@ -253,13 +248,6 @@ public class Player_Controller : MonoBehaviour
         GameOver();
     }    
 
-    public void HanbokHolder(GameObject hanbok)
-    {
-        if (hanbok)
-        {
-            target = hanbok;
-        }
-    }
 
     private void ApproachSwitchMap()
     {

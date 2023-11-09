@@ -22,14 +22,14 @@ public class PlayerBackChecking : MonoBehaviour
         Vector3 dir = transform.TransformDirection(-transform.forward) * length;
         Ray rayBackward = new Ray(transform.position, dir);
 
-        if (Physics.Raycast(rayBackward, out hit, 10f, virusMask, QueryTriggerInteraction.Collide))
+        if (Physics.Raycast(rayBackward, out hit, 10f, virusMask))
         {
-
             if (hit.collider.gameObject.GetComponent<EnemyReturn>()
                 || hit.collider.gameObject.GetComponent<EnemyMoving>())
             {
                 hit.collider.gameObject.GetComponent<EnemyReturn>().LifeCoolDown();
                 hit.collider.gameObject.GetComponent<EnemyMoving>().SpeedUp(speedRate);
+                
             }
 
 
