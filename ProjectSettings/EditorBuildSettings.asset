@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuPN.unity
     guid: aff3b33b0396f5c49999090fe581fc10
   - enabled: 1
-    path: Assets/Scenes/GamePN.unity
+    path: Assets/Scenes/GamePlayVietNam.unity
     guid: c804f60bb4ff19d4c86cc3fec51d9c14
   - enabled: 1
     path: Assets/Scenes/GamePlayKorea.unity
