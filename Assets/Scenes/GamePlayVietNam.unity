@@ -14212,7 +14212,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   length: 10
-  speedRate: 0.2
+  speedRate: 0.1
 --- !u!1 &1413752377
 GameObject:
   m_ObjectHideFlags: 0
