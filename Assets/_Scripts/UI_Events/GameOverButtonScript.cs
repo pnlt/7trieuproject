@@ -29,7 +29,7 @@ public class GameOverButtonScript : MonoBehaviour
     }
 
     public void Restart_Button() {
-        
+        PlayerPrefs.SetInt("Distance_Score", 0);
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }

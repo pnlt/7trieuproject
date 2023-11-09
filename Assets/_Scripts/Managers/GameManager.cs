@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         PlayerPrefs.SetInt("total_masks", 0);
-        distanceContainer += PlayerPrefs.GetInt("cc");
+        distanceContainer += PlayerPrefs.GetInt("Distance_Score");
         distanceTravese = distanceContainer;
         uiManager = UI_Manager._instance;
         ShowTutorial();
@@ -187,8 +187,7 @@ public class GameManager : MonoBehaviour
     public void ChangeStatus()
     {
         startTracking = true;
-        PlayerPrefs.SetInt("cc", (int)distanceTravese);
-        Debug.Log(PlayerPrefs.GetInt("cc"));
+        PlayerPrefs.SetInt("Distance_Score", (int)distanceTravese);
     }
     #endregion
 }
