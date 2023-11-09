@@ -9,8 +9,7 @@ public class VolumeButton : MonoBehaviour
     private Image buttonImage;
     private bool isOpen = true;
 
-    // Use PlayerPrefs to store volume state
-    private const string VolumePrefsKey = "IsVolumeOpen";
+   
 
     void Start()
     {
@@ -20,33 +19,29 @@ public class VolumeButton : MonoBehaviour
             return;
         }
 
-        // Retrieve the volume state from PlayerPrefs
-        isOpen = PlayerPrefs.GetInt(VolumePrefsKey, 1) == 1;
 
         buttonImage.sprite = isOpen ? openVolumeImage : closedVolumeImage;
 
-        GetComponent<Button>().onClick.AddListener(ToggleVolume);
+        GetComponent<Button>().onClick.AddListener(togglevolume);
     }
 
-    void ToggleVolume()
+    void togglevolume()
     {
         isOpen = !isOpen;
         buttonImage.sprite = isOpen ? openVolumeImage : closedVolumeImage;
 
-        // Adjust the system volume
-        AudioListener.volume = isOpen ? 1.0f : 0.0f; // 1.0 is 100%, 0.0 is 0%
 
-        // Save the volume state to PlayerPrefs
-        PlayerPrefs.SetInt(VolumePrefsKey, isOpen ? 1 : 0);
-        PlayerPrefs.Save();
+        //audiolistener.volume = isopen ? 1.0f : 0.0f;
+
+
     }
 
-    public void SetVolumeState(bool on)
-    {
-        isOpen = on;
-        buttonImage.sprite = isOpen ? openVolumeImage : closedVolumeImage;
+    //public void setvolumestate(bool on)
+    //{
+    //    isopen = on;
+    //    buttonimage.sprite = isopen ? openvolumeimage : closedvolumeimage;
 
-        // Adjust the system volume
-        AudioListener.volume = isOpen ? 1.0f : 0.0f; // 1.0 is 100%, 0.0 is 0%
-    }
+
+    //    audiolistener.volume = isopen ? 1.0f : 0.0f; 
+    //}
 }
