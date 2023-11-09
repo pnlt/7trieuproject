@@ -14211,7 +14211,7 @@ MonoBehaviour:
   virusMask:
     serializedVersion: 2
     m_Bits: 128
-  length: 10
+  length: 0
   speedRate: 0.1
 --- !u!1 &1413752377
 GameObject:
