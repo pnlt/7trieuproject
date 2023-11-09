@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
             maskToVisit += valueIncr;
         }
         else
-            maskToVisit = 30;
+            maskToVisit = 5;
         
     }
 
@@ -188,6 +188,7 @@ public class GameManager : MonoBehaviour
     {
         startTracking = true;
         PlayerPrefs.SetInt("cc", (int)distanceTravese);
+        Debug.Log(PlayerPrefs.GetInt("cc"));
     }
     #endregion
 }
