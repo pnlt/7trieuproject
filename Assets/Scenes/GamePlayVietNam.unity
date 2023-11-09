@@ -9451,7 +9451,6 @@ Transform:
   m_Children:
   - {fileID: 922214906}
   - {fileID: 1463620538}
-  - {fileID: 1213917412}
   m_Father: {fileID: 1866227485}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &994761100
@@ -10731,7 +10730,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.75
@@ -11750,37 +11749,6 @@ Transform:
   - {fileID: 2018387396}
   m_Father: {fileID: 1803418411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1213917411
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1213917412}
-  m_Layer: 0
-  m_Name: Trees
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1213917412
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213917411}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 993961148}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1219433533
 GameObject:
   m_ObjectHideFlags: 0
@@ -12066,6 +12034,10 @@ PrefabInstance:
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3863033504466256242, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8085558431275442503, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13999987
@@ -12109,6 +12081,10 @@ PrefabInstance:
     - target: {fileID: 8687180118915921771, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_Name
       value: Hoi_An
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16047,6 +16023,10 @@ PrefabInstance:
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3863033504466256242, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8085558431275442503, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13999987
@@ -16098,6 +16078,10 @@ PrefabInstance:
     - target: {fileID: 8687180118915921771, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_Name
       value: Hoi_An (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19108,7 +19092,7 @@ MonoBehaviour:
   pooledPrefabs:
   - {fileID: 8687180118915921771, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
   - {fileID: 3366172083133787335, guid: 80f2dde040904dc47aad6e039c108a87, type: 3}
-  maskThreshold: 6400000064000000
+  maskThreshold: 3200000032000000
 --- !u!4 &1866227485
 Transform:
   m_ObjectHideFlags: 0
@@ -19554,6 +19538,10 @@ PrefabInstance:
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3863033504466256242, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8085558431275442503, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13999987
@@ -19597,6 +19585,10 @@ PrefabInstance:
     - target: {fileID: 8687180118915921771, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_Name
       value: Hoi_An (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

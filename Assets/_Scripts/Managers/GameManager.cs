@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
             maskToVisit += valueIncr;
         }
         else
-            maskToVisit = 200;
+            maskToVisit = 100;  
         
     }
 
