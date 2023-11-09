@@ -23,9 +23,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        Time.timeScale = 1.0f;
         pausePanel.SetActive(false);
-        gameManager.SetGamePause(true);
         //StartCoroutine(ResumeGame()); 
 
         StartCoroutine(ResumeGame());
@@ -36,14 +34,14 @@ public class PauseMenu : MonoBehaviour
         while (true)
         {
             timeResumeText.text = Mathf.RoundToInt(timeToResume).ToString();
-            timeToResume = timeToResume - Time.deltaTime;
+            timeToResume = timeToResume - Time.unscaledDeltaTime;
             
             if (timeToResume <= 0)
             {
                 timeToResume = 3f;
+                Time.timeScale = 1.0f;
                 gameObject.SetActive(false);
                 pausePanel.SetActive(true);
-                gameManager.SetGamePause(false);
                 break;
             }
             

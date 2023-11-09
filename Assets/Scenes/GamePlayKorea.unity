@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43424192, g: 0.4811309, b: 0.56203675, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667564, g: 0.48427135, b: 0.56452316, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1746,6 +1746,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   total_masks_text: {fileID: 1285449305}
   distance_text: {fileID: 1374960652}
+  pauseMenu: {fileID: 0}
 --- !u!1 &179659675
 GameObject:
   m_ObjectHideFlags: 0
@@ -11343,6 +11344,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
+    - target: {fileID: 4958067075991939457, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: surface
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 405561133749002721, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
@@ -11390,10 +11395,6 @@ PrefabInstance:
     - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_Name
       value: Korea (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4958067075991939457, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: surface
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
@@ -16384,6 +16385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
+    - target: {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 680ff7ce2c188a34e88f8f0b8fb93cb2, type: 2}
     - target: {fileID: 405561133749002721, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
@@ -16440,10 +16445,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Korea
       objectReference: {fileID: 0}
-    - target: {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 680ff7ce2c188a34e88f8f0b8fb93cb2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20193,7 +20194,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2730118931559143590, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1928071082}
   m_SourcePrefab: {fileID: 100100000, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
 --- !u!1 &1928071079 stripped
 GameObject:
@@ -20205,6 +20209,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8283305042486712828, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
   m_PrefabInstance: {fileID: 1928071078}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1928071082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928071079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 8da464c30ff5796479afac9eb6955508, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 255299951}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: ChangeStatus
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1931174866
 GameObject:
   m_ObjectHideFlags: 0

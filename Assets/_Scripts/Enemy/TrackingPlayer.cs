@@ -21,7 +21,7 @@ public class TrackingPlayer : MonoBehaviour
     }
     private void OnEnable()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y - 0.9f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y - 1f, transform.position.z);
     }
 
     private void Start()
@@ -32,9 +32,11 @@ public class TrackingPlayer : MonoBehaviour
 
     private void Update()
     {
-        //transform.LookAt(player.position);
         MovementBehaviour();
-        //transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
+        if (transform.position.z < player.position.z)
+        {
+            //Debug.Log("cc");
+        }
     }
 
     private void MovementBehaviour()
