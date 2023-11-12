@@ -13,7 +13,7 @@ public class ObjectPoolingRoad : MonoBehaviour
     
 
     private List<GameObject> pooledObjects;
-    private int amountToPool = 5;
+    private int amountToPool = 3;
     private int currentMapIdx; 
 
     private void Awake()

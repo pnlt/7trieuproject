@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
     [Header ("parameters")]
     public static GameManager _instance;
-    [SerializeField] private int maskToVisit;
+    private static int maskToVisit;
     [SerializeField] private Vector3 offsetLocation;
 
     [Header ("GameObject Prefab")]
@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
     private bool isPaused;
     private bool isTutorialGamePlay;
     private bool startSwitchMap;
+    public int distanceContainer;
+    private static bool startTracking = false;
 
     public bool GetGameOver()
     {
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour
 
     public int GetMaskToVisit()
     {
-        return this.maskToVisit;
+        return GameManager.maskToVisit;
     }
 
     public bool GetSwitchMap()
@@ -94,7 +96,22 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         PlayerPrefs.SetInt("total_masks", 0);
+        distanceContainer += PlayerPrefs.GetInt("Distance_Score");
+        distanceTravese = distanceContainer;
         uiManager = UI_Manager._instance;
+        ShowTutorial();
+        if (startTracking)
+        {
+            int valueIncr = Random.Range(15, 51);
+            maskToVisit += valueIncr;
+        }
+        else
+            maskToVisit = 100;  
+        
+    }
+
+    private void ShowTutorial()
+    {
         if (!PlayerPrefs.HasKey("firstPlay"))
         {
             isTutorialGamePlay = true;
@@ -112,6 +129,7 @@ public class GameManager : MonoBehaviour
     {
         StartEvent();
         SwitchMapEvent();
+        //Debug.Log(Time.unscaledTime / Time.unscaledDeltaTime);
     }
 
     private void StartEvent()
@@ -160,18 +178,16 @@ public class GameManager : MonoBehaviour
             { 
                 text = "Congratulation! You have collected enough masks.You will be transported to VietNam map.";
             }
-            //MapConnect();
             //starts timeline
             uiManager.SetSwitchText(text);
             uiManager.ShowUptimelineOBPanel();
         }
     }
 
-    private void MapConnect()
+    public void ChangeStatus()
     {
-        GameObject hanbok = Instantiate(koreaPrefab);
-        hanbok.transform.position += new Vector3(offsetLocation.x, offsetLocation.y, player.position.z + offsetLocation.z);
-        player.GetComponent<Player_Controller>().HanbokHolder(hanbok);
+        startTracking = true;
+        PlayerPrefs.SetInt("Distance_Score", (int)distanceTravese);
     }
     #endregion
 }

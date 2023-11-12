@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf298675ffff62d41a86453f8c8d5929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: 25
 --- !u!114 &5460203230187601211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +86,8 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 64
-  radius: 0.3
+  radius: 0.5
+  gameManager: {fileID: 0}
   player: {fileID: 0}
 --- !u!114 &-369699577958614905
 MonoBehaviour:
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec6e1132a7d62c045a670515869aa660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifeCycle: 4
+  _lifeCycle: 5
 --- !u!1001 &8965120947258748112
 PrefabInstance:
   m_ObjectHideFlags: 0
