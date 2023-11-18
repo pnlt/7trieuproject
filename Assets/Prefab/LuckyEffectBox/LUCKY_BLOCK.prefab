@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8630867696137478986}
   - component: {fileID: 8520020522346156244}
   - component: {fileID: 7381488898094108668}
+  - component: {fileID: 8905091764453179907}
   m_Layer: 0
   m_Name: LUCKY_BLOCK
   m_TagString: PowerUp
@@ -122,3 +123,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.021999998, y: 0.022, z: 0.021999998}
   m_Center: {x: 0, y: 0.000000029802322, z: 0}
+--- !u!114 &8905091764453179907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732945206792715740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33370ae1e1f430042b45d98976d75705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: 8300000, guid: dc6614beca09347ec9b258f12d154bdd, type: 3}
