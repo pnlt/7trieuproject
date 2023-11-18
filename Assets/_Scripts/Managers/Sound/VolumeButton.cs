@@ -19,6 +19,8 @@ public class VolumeButton : MonoBehaviour
             return;
         }
 
+        
+        isOpen = PlayerPrefs.GetInt("VolumeState", 1) == 1;
 
         buttonImage.sprite = isOpen ? openVolumeImage : closedVolumeImage;
 
@@ -31,17 +33,21 @@ public class VolumeButton : MonoBehaviour
         buttonImage.sprite = isOpen ? openVolumeImage : closedVolumeImage;
 
 
-        //audiolistener.volume = isopen ? 1.0f : 0.0f;
+        PlayerPrefs.SetInt("VolumeState", isOpen ? 1 : 0);
 
 
     }
 
-    //public void setvolumestate(bool on)
-    //{
-    //    isopen = on;
-    //    buttonimage.sprite = isopen ? openvolumeimage : closedvolumeimage;
+    public void setvolumestate(bool on)
+    {
+        isOpen = on;
+        buttonImage.sprite = isOpen ? openVolumeImage : closedVolumeImage;
+        PlayerPrefs.SetInt("VolumeState", isOpen ? 1 : 0);
 
+    }
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("VolumeState", 1);
+    }
 
-    //    audiolistener.volume = isopen ? 1.0f : 0.0f; 
-    //}
 }
