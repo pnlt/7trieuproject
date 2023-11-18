@@ -161,8 +161,8 @@ public class Player_Controller : MonoBehaviour
                     {
                         if (diff.y < 0 && !isGrounded)
                         {
-                            player_Animator.SetInteger("isJump", 0);
-                            rigid.velocity = Vector3.up * -5;
+                            //player_Animator.SetInteger("isJump", 0);
+                            //rigid.velocity = Vector3.up * -5;
                         }
                         else if (diff.y > 0 && !swipeTopTuto && isGrounded)
                         {
@@ -317,12 +317,6 @@ public class Player_Controller : MonoBehaviour
         }
         player_Animator.SetInteger("isJump", 0);
     }
-
-    //private void Reset()
-    //{
-    //    startTouch = swipeDelta = Vector2.zero;
-    //    isDraging = false;
-    //}
 
     private void OnTriggerEnter(Collider other)
     {
