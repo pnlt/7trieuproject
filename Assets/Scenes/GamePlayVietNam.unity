@@ -2356,7 +2356,7 @@ GameObject:
   - component: {fileID: 225192277}
   - component: {fileID: 225192276}
   - component: {fileID: 225192275}
-  - component: {fileID: 225192274}
+  - component: {fileID: 225192278}
   - component: {fileID: 225192273}
   m_Layer: 5
   m_Name: image2
@@ -2399,20 +2399,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggleMusic: 0
   _toggleEffects: 1
---- !u!114 &225192274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225192271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc94663b47ece8940aa409c8cc05d9e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openVolumeImage: {fileID: 21300000, guid: f691523ae6dd34044b764f157af52dcb, type: 3}
-  closedVolumeImage: {fileID: 21300000, guid: c85d3e9fb3db4da4f98fe77d984f7287, type: 3}
 --- !u!114 &225192275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2507,6 +2493,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225192271}
   m_CullTransparentMesh: 1
+--- !u!114 &225192278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225192271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280ce568ad4268f4ab557bb25ff15384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openVolumeEffectImage: {fileID: 21300000, guid: f691523ae6dd34044b764f157af52dcb, type: 3}
+  closedVolumeEffectImage: {fileID: 21300000, guid: c85d3e9fb3db4da4f98fe77d984f7287, type: 3}
 --- !u!1 &229229018
 GameObject:
   m_ObjectHideFlags: 0
