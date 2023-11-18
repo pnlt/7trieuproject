@@ -54,7 +54,8 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
   - serializedVersion: 3
     name: Low
     pixelLightCount: 0
@@ -103,7 +104,8 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
   - serializedVersion: 3
     name: Medium
     pixelLightCount: 1
@@ -111,7 +113,7 @@ QualitySettings:
     shadowResolution: 0
     shadowProjection: 1
     shadowCascades: 1
-    shadowDistance: 20
+    shadowDistance: 18
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
@@ -119,14 +121,14 @@ QualitySettings:
     skinWeights: 2
     globalTextureMipmapLimit: 0
     textureMipmapLimitSettings: []
-    anisotropicTextures: 1
+    anisotropicTextures: 0
     antiAliasing: 0
     softParticles: 0
     softVegetation: 0
     realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 0
     useLegacyDetailDistribution: 1
-    vSyncCount: 1
+    vSyncCount: 0
     realtimeGICPUUsage: 25
     lodBias: 0.7
     maximumLODLevel: 0
@@ -152,7 +154,8 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
   - serializedVersion: 3
     name: High
     pixelLightCount: 2
@@ -201,7 +204,8 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
   - serializedVersion: 3
     name: Very High
     pixelLightCount: 3
@@ -250,7 +254,8 @@ QualitySettings:
     terrainBillboardStart: 50
     terrainFadeLength: 5
     terrainMaxTrees: 50
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Android
   - serializedVersion: 3
     name: Ultra
     pixelLightCount: 4
