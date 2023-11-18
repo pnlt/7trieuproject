@@ -38,5 +38,6 @@ public class MainMenuManager : MonoBehaviour
     {
         uiManager.ShowUpPausePanel();
         Time.timeScale = 0;
+        gameManager.SetGamePause(true);
     }
 }
