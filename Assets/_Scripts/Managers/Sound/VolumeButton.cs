@@ -57,15 +57,12 @@ public class VolumeButton : MonoBehaviour
     void OnApplicationQuit()
     {
         PlayerPrefs.SetInt("VolumeState", 1);
+
+        QuitApplicationUtility.MoveAndroidApplicationToBack();
+
+     
     }
 
 
-    void OnApplicationPause(bool pauseStatus)
-    {
-        if (pauseStatus)
-        {
-            PlayerPrefs.SetInt("VolumeState", isOpen ? 1 : 0);
-        }
-    }
 
 }

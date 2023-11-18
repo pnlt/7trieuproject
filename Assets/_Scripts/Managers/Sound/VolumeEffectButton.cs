@@ -56,14 +56,12 @@ public class VolumeEffectButton : MonoBehaviour
     void OnApplicationQuit()
     {
         PlayerPrefs.SetInt("EffectVolumeState", 1);
+
+        QuitApplicationUtility.MoveAndroidApplicationToBack();
+
+        
     }
 
 
-    void OnApplicationPause(bool pauseStatus)
-    {
-        if (pauseStatus)
-        {
-            PlayerPrefs.SetInt("EffectVolumeState", isOpen ? 1 : 0);
-        }
-    }
+  
 }
