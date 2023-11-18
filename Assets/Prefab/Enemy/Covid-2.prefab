@@ -70,6 +70,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
+  xVel: 1
+  yVel: 1
+  zVel: 1
 --- !u!114 &5460203230187601211
 MonoBehaviour:
   m_ObjectHideFlags: 0

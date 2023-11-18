@@ -272,7 +272,6 @@ public class Player_Controller : MonoBehaviour
         isGameOver = gameManager.GetGameOver();
         if (isGameOver)
         {
-            gameManager.SetGameOver(false);
             gameManager.SetGameStart(false);
             gameManager.SetGamePause(true);
             gameManager.SetBestScore((int)distance);
