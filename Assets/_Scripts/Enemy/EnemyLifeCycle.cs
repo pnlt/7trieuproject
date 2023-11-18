@@ -18,9 +18,6 @@ public class EnemyLifeCycle : MonoBehaviour
 
     private void Update()
     {
-        if (gameObject.activeSelf == false)
-            lifeTime = 0;
-
         lifeTime += Time.deltaTime;
         if (lifeTime >= _lifeCycle)
         {
@@ -29,4 +26,8 @@ public class EnemyLifeCycle : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+         lifeTime = 0;
+    }
 }
