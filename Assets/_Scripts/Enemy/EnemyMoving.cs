@@ -37,7 +37,7 @@ public class EnemyMoving : MonoBehaviour
         inGameProcess = gameManager.GetGameStart();
         if (!pauseGame && inGameProcess)
         {
-            transform.position += new Vector3(transform.forward.x, 0, transform.forward.z) * speed * speedRate * Time.deltaTime;
+            transform.position += new Vector3(transform.forward.x, 0, transform.forward.z) * speed * Time.deltaTime;
         }
             
     }

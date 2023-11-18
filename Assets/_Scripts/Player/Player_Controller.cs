@@ -499,10 +499,6 @@ public class Player_Controller : MonoBehaviour
             health.currentHealth++;
             uiManager.UpdateHeartsUI(health.currentHealth);
         }
-        else
-        {
-            Debug.Log("Maximum health reached. Cannot gain more hearts.");
-        }
         powerUpType = PowerUp.Default;
     }
 
