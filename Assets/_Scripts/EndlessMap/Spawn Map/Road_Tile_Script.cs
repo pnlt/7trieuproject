@@ -13,7 +13,7 @@ public class Road_Tile_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player.transform.position.z > transform.position.z + 38.5f) {
+        if (Player.transform.position.z > transform.position.z + 40f) {
             this.gameObject.SetActive(false);
             GameObject road_tile = ObjectPoolingRoad.instance.GetPooledObject();
             if (road_tile != null)

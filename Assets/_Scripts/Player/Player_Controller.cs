@@ -42,7 +42,6 @@ public class Player_Controller : MonoBehaviour
     private UI_Manager uiManager;
     private GameManager gameManager;
     private PowerUp powerUpType;
-    private GameObject target;
 
     public bool isGameStarted { get; private set; }
     public bool isGameOver { get; private set; }
@@ -52,10 +51,9 @@ public class Player_Controller : MonoBehaviour
     private bool inSwitchMode;
 
     //Touch motions in game
-    private static bool tap, swipeLeft, swipeRight, swipeTop;
+    private static bool swipeLeft, swipeRight, swipeTop;
     private bool swipeLeftTuto, swipeTopTuto;
-    private Vector2 startTouch, diff;
-    private bool isDraging = false;
+    private Vector2 diff;
     private int desiredLane = 1; //0: left 1:center 2:right
     private bool isGrounded;
     private bool isSpeedBoostActive = false;
@@ -65,7 +63,7 @@ public class Player_Controller : MonoBehaviour
     //Effects in game
     private string POWERUP_TAG = "PowerUp";
 
-//Speed boost's parameters effect
+    //Speed boost's parameters effect
     private float originalRunningSpeed;
     private float speedBoostMultiplier = 1.5f;
     private float speedBoostDuration = 5.0f;
@@ -155,7 +153,7 @@ public class Player_Controller : MonoBehaviour
 
                 diff = new Vector2(diff.x / Screen.width, diff.y / Screen.width);
 
-                if (diff.magnitude > 0.01f) //we set the swip distance to trigger movement to 1% of the screen width
+                if (diff.magnitude > 0.01f)
                 {
                     if (Mathf.Abs(diff.y) > Mathf.Abs(diff.x))
                     {
@@ -251,16 +249,6 @@ public class Player_Controller : MonoBehaviour
             gameManager.SetGamePause(true);
             gameManager.SetGameStart(false);
         }
-        /*if (target)
-        {
-            if (Vector3.Distance(transform.position, target.transform.position) < 15)
-            {
-                running_Speed = 0;
-                gameManager.SetGamePause(true);
-                gameManager.SetGameStart(false);
-                //kick off some events
-            }
-        }*/
     }
 
     private float CalculateDistance()
