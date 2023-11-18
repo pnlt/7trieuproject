@@ -40,6 +40,7 @@ public class PauseMenu : MonoBehaviour
             {
                 timeToResume = 3f;
                 Time.timeScale = 1.0f;
+                gameManager.SetGamePause(false);
                 gameObject.SetActive(false);
                 pausePanel.SetActive(true);
                 break;
