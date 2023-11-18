@@ -2356,7 +2356,7 @@ GameObject:
   - component: {fileID: 225192277}
   - component: {fileID: 225192276}
   - component: {fileID: 225192275}
-  - component: {fileID: 225192274}
+  - component: {fileID: 225192278}
   - component: {fileID: 225192273}
   m_Layer: 5
   m_Name: image2
@@ -2399,20 +2399,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggleMusic: 0
   _toggleEffects: 1
---- !u!114 &225192274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 225192271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc94663b47ece8940aa409c8cc05d9e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openVolumeImage: {fileID: 21300000, guid: f691523ae6dd34044b764f157af52dcb, type: 3}
-  closedVolumeImage: {fileID: 21300000, guid: c85d3e9fb3db4da4f98fe77d984f7287, type: 3}
 --- !u!114 &225192275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2507,6 +2493,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225192271}
   m_CullTransparentMesh: 1
+--- !u!114 &225192278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225192271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280ce568ad4268f4ab557bb25ff15384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openVolumeEffectImage: {fileID: 21300000, guid: f691523ae6dd34044b764f157af52dcb, type: 3}
+  closedVolumeEffectImage: {fileID: 21300000, guid: c85d3e9fb3db4da4f98fe77d984f7287, type: 3}
 --- !u!1 &229229018
 GameObject:
   m_ObjectHideFlags: 0
@@ -12029,23 +12029,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
-    - target: {fileID: 405561133749002721, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+    - target: {fileID: 2988969695343728703, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1130911476482309217, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3084931993921897275, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3272746571366756222, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416469250715105163, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
@@ -12089,13 +12077,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8413693876180869112, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_Name
-      value: Korea (1)
+      value: Korea
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15995,27 +15983,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
-    - target: {fileID: 405561133749002721, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+    - target: {fileID: 1169702538618950100, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988969695343728703, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1130911476482309217, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3084931993921897275, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3272746571366756222, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5499781837119194758, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416469250715105163, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
@@ -16063,18 +16039,18 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    - target: {fileID: 8413693876180869112, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: m_Name
-      value: Korea
-      objectReference: {fileID: 0}
     - target: {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_NavMeshData
       value: 
       objectReference: {fileID: 23800000, guid: 680ff7ce2c188a34e88f8f0b8fb93cb2, type: 2}
+    - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+      propertyPath: m_Name
+      value: Korea (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19111,7 +19087,7 @@ MonoBehaviour:
   - {fileID: 985426132}
   pooledPrefabs:
   - {fileID: 8687180118915921771, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-  maskThreshold: 64000000
+  maskThreshold: ffffff7f
 --- !u!4 &1866227485
 Transform:
   m_ObjectHideFlags: 0
@@ -19553,23 +19529,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
-    - target: {fileID: 405561133749002721, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+    - target: {fileID: 2988969695343728703, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1130911476482309217, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3084931993921897275, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3272746571366756222, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7416469250715105163, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
@@ -19613,13 +19577,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8413693876180869112, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_Name
-      value: Korea (2)
+      value: Korea (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19743,14 +19707,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 2730118931559143590, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
-      propertyPath: m_Name
-      value: Aodaiwaving
-      objectReference: {fileID: 0}
-    - target: {fileID: 2730118931559143590, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8283305042486712828, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5000003
@@ -19797,6 +19753,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283305042486712828, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730118931559143590, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
+      propertyPath: m_Name
+      value: Aodaiwaving
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730118931559143590, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
