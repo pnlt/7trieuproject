@@ -9,7 +9,13 @@ public class VolumeButton : MonoBehaviour
     private Image buttonImage;
     private bool isOpen = true;
 
-   
+
+    void Awake()
+    {
+     
+        DontDestroyOnLoad(gameObject);
+    }
+
 
     void Start()
     {
@@ -19,10 +25,13 @@ public class VolumeButton : MonoBehaviour
             return;
         }
 
-        
+
         isOpen = PlayerPrefs.GetInt("VolumeState", 1) == 1;
 
         buttonImage.sprite = isOpen ? openVolumeImage : closedVolumeImage;
+
+       
+
 
         GetComponent<Button>().onClick.AddListener(togglevolume);
     }
@@ -48,6 +57,15 @@ public class VolumeButton : MonoBehaviour
     void OnApplicationQuit()
     {
         PlayerPrefs.SetInt("VolumeState", 1);
+    }
+
+
+    void OnApplicationPause(bool pauseStatus)
+    {
+        if (pauseStatus)
+        {
+            PlayerPrefs.SetInt("VolumeState", isOpen ? 1 : 0);
+        }
     }
 
 }
