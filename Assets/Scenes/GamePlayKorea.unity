@@ -12033,7 +12033,15 @@ PrefabInstance:
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1130911476482309217, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583153729918431342, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
@@ -12080,10 +12088,6 @@ PrefabInstance:
     - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_Name
       value: Korea
-      objectReference: {fileID: 0}
-    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: isDefault
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15991,7 +15995,19 @@ PrefabInstance:
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 680ff7ce2c188a34e88f8f0b8fb93cb2, type: 2}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1130911476482309217, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583153729918431342, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
@@ -16039,17 +16055,9 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
-    - target: {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 680ff7ce2c188a34e88f8f0b8fb93cb2, type: 2}
     - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_Name
       value: Korea (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: isDefault
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16130,8 +16138,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 51.2, y: 0.000040054}
+  m_SizeDelta: {x: 46.3063, y: 79.049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1744295966
 MonoBehaviour:
@@ -16146,14 +16154,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.84313726, g: 0.9764151, b: 0.9764151, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8c94b651f636b6b48bd5636ce75446f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6aa66052550357047bacb9d5f7b70d91, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19533,7 +19541,15 @@ PrefabInstance:
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1130911476482309217, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4583153729918431342, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
       objectReference: {fileID: 0}
@@ -19580,10 +19596,6 @@ PrefabInstance:
     - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_Name
       value: Korea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: isDefault
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19707,6 +19719,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2730118931559143590, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
+      propertyPath: m_Name
+      value: Aodaiwaving
+      objectReference: {fileID: 0}
+    - target: {fileID: 2730118931559143590, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8283305042486712828, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5000003
@@ -19753,14 +19773,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8283305042486712828, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2730118931559143590, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
-      propertyPath: m_Name
-      value: Aodaiwaving
-      objectReference: {fileID: 0}
-    - target: {fileID: 2730118931559143590, guid: aae630c9562a0b543a2114afb67808ac, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

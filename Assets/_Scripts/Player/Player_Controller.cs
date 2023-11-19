@@ -272,6 +272,7 @@ public class Player_Controller : MonoBehaviour
         isGameOver = gameManager.GetGameOver();
         if (isGameOver)
         {
+            gameManager.SetGameOver(false);
             gameManager.SetGameStart(false);
             gameManager.SetGamePause(true);
             gameManager.SetBestScore((int)distance);
@@ -321,7 +322,7 @@ public class Player_Controller : MonoBehaviour
             Obstacle ob = other.gameObject.GetComponent<Obstacle>();
             if (ob != null)
             {
-                rigid.velocity = -Vector3.forward * jump_Force;
+                rigid.velocity = -Vector3.forward * 8;
 
                 health.DiminishHealth();
                 ob.Impacted();
