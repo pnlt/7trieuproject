@@ -33,4 +33,10 @@ public class GameOverButtonScript : MonoBehaviour
         SceneManager.LoadScene(1);
         Time.timeScale = 1;
     }
+
+    public void Home_Button() {
+        PlayerPrefs.SetInt("Distance_Score", 0);
+        SceneController.instance.NextLevel("backHome");
+        Time.timeScale = 1;
+    }
 }
