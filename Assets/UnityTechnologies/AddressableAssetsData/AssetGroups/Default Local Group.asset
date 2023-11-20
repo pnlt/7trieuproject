@@ -16,7 +16,12 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 10a3f663a719b71479f7d9c748a59acf
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: d7581ae65f6321447a66ee3ae24fe8a1
+    m_Address: Assets/Graphics/3D/Mask/BlobShadow.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 8d66d58cf94084b4088120e329ef9420, type: 2}
   m_SchemaSet:
