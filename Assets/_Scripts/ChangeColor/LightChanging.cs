@@ -6,7 +6,8 @@ public class LightChanging : MonoBehaviour
 {
     [SerializeField] private Color[] colorArray;
     [SerializeField] private Light skyColor;
-    [SerializeField] private float time;
+    private float time;
+    private GameManager gameManager;
     private float timeTransition;
 
     private int firstColor;
@@ -14,7 +15,9 @@ public class LightChanging : MonoBehaviour
 
     private void Start()
     {
+        gameManager = GameManager._instance;
         skyColor = GetComponent<Light>();
+        time = gameManager.GetTimeCycle();
         firstColor = 0;
         secondColor = 1;
     }
@@ -22,7 +25,6 @@ public class LightChanging : MonoBehaviour
     private void Update()
     {
         Transition();
-        //Debug.Log(colorArray.Length);
     }
 
     private void Transition()
