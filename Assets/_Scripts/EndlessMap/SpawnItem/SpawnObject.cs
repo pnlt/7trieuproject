@@ -20,6 +20,7 @@ public class SpawnObject : MonoBehaviour
     private float zPos;
     private float xPos;
     private float yPos;
+    private bool isHappen;
 
     // Start is called before the first frame update
     private void Start()
@@ -33,6 +34,7 @@ public class SpawnObject : MonoBehaviour
     private void SetUpSpawn()
     {
         spawnTimer = Time.time;
+        isHappen = false;
         getListX_Values = xValues.GetComponent<X_Values>().GetX_Values();
 
         for (int i = 0; i < xPosValues.Length; i++)
@@ -44,15 +46,18 @@ public class SpawnObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (playerController.isGameStarted)
-            Invoke("SpawnItemsRandomly", 1);
+        if (playerController.isGameStarted && !playerController.pauseGame)
+        {
+            Invoke("SpawnItemsRandomly", 1);            
+        }
+            
+
     }
 
     private void SpawnItemsRandomly()
     {
         if (!playerController.isGameOver && !playerController.pauseGame)
-        LineRandomContinuously();
+            LineRandomContinuously();
     }
 
 
@@ -86,5 +91,6 @@ public class SpawnObject : MonoBehaviour
             }
             spawnTimer = 0;
         }
+        
     }
 }

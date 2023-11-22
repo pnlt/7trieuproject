@@ -1727,7 +1727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -102.79407}
+  m_AnchoredPosition: {x: 60, y: -130}
   m_SizeDelta: {x: 100, y: 205.5882}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &639304027
@@ -2042,7 +2042,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -11.7951, y: 72.31346}
-  m_SizeDelta: {x: 330.5295, y: 360.5144}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &844446866
 MonoBehaviour:
@@ -2302,8 +2302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81.6, y: -61.6}
-  m_SizeDelta: {x: 330.5295, y: 360.5144}
+  m_AnchoredPosition: {x: -98, y: -61.6}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &998203003
 MonoBehaviour:
@@ -2539,7 +2539,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -11.7951, y: 9}
-  m_SizeDelta: {x: 330.5295, y: 360.5144}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1041138484
 MonoBehaviour:
@@ -3220,7 +3220,7 @@ GameObject:
   - component: {fileID: 1700198478}
   - component: {fileID: 1700198477}
   - component: {fileID: 1700198476}
-  - component: {fileID: 1700198475}
+  - component: {fileID: 1700198479}
   - component: {fileID: 1700198474}
   m_Layer: 5
   m_Name: AudioEffect
@@ -3245,8 +3245,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -81, y: -133}
-  m_SizeDelta: {x: 330.5295, y: 360.5144}
+  m_AnchoredPosition: {x: -97.39996, y: -133}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700198474
 MonoBehaviour:
@@ -3262,20 +3262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _toggleMusic: 0
   _toggleEffects: 1
---- !u!114 &1700198475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1700198472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc94663b47ece8940aa409c8cc05d9e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  openVolumeImage: {fileID: 21300000, guid: f691523ae6dd34044b764f157af52dcb, type: 3}
-  closedVolumeImage: {fileID: 21300000, guid: c85d3e9fb3db4da4f98fe77d984f7287, type: 3}
 --- !u!114 &1700198476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3370,6 +3356,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1700198472}
   m_CullTransparentMesh: 1
+--- !u!114 &1700198479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700198472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280ce568ad4268f4ab557bb25ff15384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openVolumeEffectImage: {fileID: 21300000, guid: f691523ae6dd34044b764f157af52dcb, type: 3}
+  closedVolumeEffectImage: {fileID: 21300000, guid: c85d3e9fb3db4da4f98fe77d984f7287, type: 3}
 --- !u!1 &1766629370
 GameObject:
   m_ObjectHideFlags: 0

@@ -41,7 +41,6 @@ public class pallet_random_script : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-
     }
 
     private void OnDisable()
@@ -52,8 +51,19 @@ public class pallet_random_script : MonoBehaviour
             if (obstacles.activeSelf)
             {
                 obstacles.gameObject.SetActive(false);
+                ActivateMask(obstacles);
             }
         }
+    }
+
+    private void ActivateMask(GameObject difficult)
+    {
+        var masks = difficult.GetComponentInChildren<MaskManager>().masksPool;
+        foreach (var item in masks)
+        {
+            item.gameObject.SetActive(true);
+        }
+        masks.Clear();
     }
     
 }
