@@ -11,6 +11,7 @@ public class LightChanging : MonoBehaviour
 
     private int firstColor;
     private int secondColor;
+    //public Light pointLight;
 
     private void Start()
     {
@@ -23,6 +24,14 @@ public class LightChanging : MonoBehaviour
     {
         Transition();
         //Debug.Log(colorArray.Length);
+//        if (skyColor.color.r < colorArray[secondColor].r && skyColor.color.g < colorArray[secondColor].g && skyColor.color.b < colorArray[secondColor].b)
+//{
+//    pointLight.enabled = true;
+//}
+//else
+//{
+//    pointLight.enabled = false;
+//}
     }
 
     private void Transition()
