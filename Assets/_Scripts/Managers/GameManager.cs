@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -5,17 +8,16 @@ using static LeaderBoardManager;
 
 public class GameManager : MonoBehaviour
 {
+    [Header ("parameters")]
     public static GameManager _instance;
-    [Header("parameters")]
+    private static int maskToVisit;
     [SerializeField] private Vector3 offsetLocation;
-    [SerializeField] private float timeCycle = 50;
 
     [Header ("GameObject Prefab")]
     [SerializeField] private GameObject koreaPrefab;
     [SerializeField] private Transform player;
 
     public HighscoreEntry highscoreEntry;
-    private static int maskToVisit;
 
     public float distanceTravese { get; set; }
 
@@ -29,11 +31,6 @@ public class GameManager : MonoBehaviour
     private bool startSwitchMap;
     public int distanceContainer;
     private static bool startTracking = false;
-
-    public float GetTimeCycle()
-    {
-        return this.timeCycle;
-    }
 
     public bool GetGameOver()
     {
@@ -62,11 +59,6 @@ public class GameManager : MonoBehaviour
     public bool GetSwitchMap()
     {
         return this.startSwitchMap;  
-    }
-
-    public void SetTimeCycle(float timeCycle)
-    {
-        timeCycle = this.timeCycle;
     }
 
     public void SetGameOver(bool status)
