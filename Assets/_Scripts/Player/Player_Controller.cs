@@ -301,7 +301,7 @@ public class Player_Controller : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         if (!isGrounded)
         {
-            rigid.velocity = new Vector3(rigid.velocity.x, rigid.velocity.y * -0.1f, rigid.velocity.z);
+            rigid.velocity = new Vector3(rigid.velocity.x, rigid.velocity.y * -0.05f, rigid.velocity.z);
         }
         player_Animator.SetInteger("isJump", 0);
     }

@@ -5592,7 +5592,7 @@ MonoBehaviour:
   laneDistance: 3
   side_speed: 0
   running_Speed: 30
-  jump_Force: 10
+  jump_Force: 11
   speedIncreaseRate: 0.1
   shieldPrefab: {fileID: 1077329180}
   shieldDuration: 5
