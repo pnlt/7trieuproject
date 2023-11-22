@@ -26,6 +26,7 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float laneDistance = 3;
     [SerializeField] private float side_speed;
     [SerializeField] private float running_Speed;
+    [SerializeField] private float maxspeed = 60;
     [SerializeField] private float jump_Force;
     [SerializeField] private float speedIncreaseRate = 0.1f;
 
@@ -65,8 +66,8 @@ public class Player_Controller : MonoBehaviour
 
     //Speed boost's parameters effect
     private float originalRunningSpeed;
-    private float speedBoostMultiplier = 1.5f;
-    private float speedBoostDuration = 5.0f;
+    private float speedBoostMultiplier = 1.3f;
+    private float speedBoostDuration = 4.0f;
     private float accumulatedSpeedIncrease = 0;
     //Shield paremeters effect
     private Coroutine getShield; 
@@ -213,8 +214,8 @@ public class Player_Controller : MonoBehaviour
             }
 
                 // Calculate the new position.
-            Vector3 newPosition = Vector3.Lerp(rigid.position, targetPosition, 10 * Time.deltaTime);
-            rigid.MovePosition(newPosition += -Vector3.back * Time.deltaTime * running_Speed);        
+            Vector3 newPosition = Vector3.Lerp(rigid.position, targetPosition, 10 * Time.fixedDeltaTime);
+            rigid.MovePosition(newPosition += -Vector3.back * Time.fixedDeltaTime * running_Speed);        
 
             distance = CalculateDistance();
             gameManager.distanceTravese = distance;
@@ -222,8 +223,9 @@ public class Player_Controller : MonoBehaviour
             if (!isSpeedBoostActive)
             {
 
-                float currentIncrease = speedIncreaseRate * Time.deltaTime;
-                running_Speed += currentIncrease;
+                float currentIncrease = speedIncreaseRate * Time.fixedDeltaTime;
+                if(running_Speed<maxspeed)
+                    running_Speed += currentIncrease;
                 accumulatedSpeedIncrease += currentIncrease;
 
             }
@@ -234,10 +236,15 @@ public class Player_Controller : MonoBehaviour
     private void Update()
     {
         InputChecking();
-        StartMotion();
+        
         ApproachSwitchMap();
         GameOver();
-    }    
+    }
+
+    private void FixedUpdate()
+    {
+        StartMotion();
+    }
 
 
     private void ApproachSwitchMap()
