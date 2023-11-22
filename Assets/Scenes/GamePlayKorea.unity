@@ -2724,7 +2724,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorArray:
   - {r: 0.7372549, g: 0.8000001, b: 0.9058824, a: 1}
-  - {r: 0.20000002, g: 0.26666668, b: 0.37647063, a: 1}
+  - {r: 0.37254903, g: 0.4745098, b: 0.6509804, a: 1}
   skyColor: {fileID: 0}
   time: 50
 --- !u!212 &231550583
@@ -16120,7 +16120,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
