@@ -3,62 +3,7 @@ guid: 6fe154cd4b5e6a94bbd33191092c412f
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 60d0dac9dfc750d4489e7cc6b1cc052c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 371ae6e40778acd4f9ec157b7cecd4a5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: a67a632cb6a02234b8e48859f097dc04, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: e9d7da338da80704199ec6a4737d9911, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.006
-    second: {fileID: 2100000, guid: 28da79b263f0ea54bbbab8380702a26f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.008
-    second: {fileID: 2100000, guid: 8e07b702a32a62b4c97d2d2805159ad1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.009
-    second: {fileID: 2100000, guid: bebc37a7a5315ce43a081fb0dc2cc0b1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: dengia
-    second: {fileID: 2100000, guid: 221df178b8e2ccb449d8aa8bac61d68a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: go window
-    second: {fileID: 2100000, guid: 3eae1c4352ab77d4a9fb2ea2b906d1ab, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: kinh
-    second: {fileID: 2100000, guid: 65184eccdf89141428200c4ac917a906, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ongnuoc
-    second: {fileID: 2100000, guid: 0f3087b86bb87274186a42479bf2f778, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

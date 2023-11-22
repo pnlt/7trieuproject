@@ -12,7 +12,6 @@ public class LightChanging : MonoBehaviour
 
     private int firstColor;
     private int secondColor;
-    //public Light pointLight;
 
     private void Start()
     {
