@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
             maskToVisit += valueIncr;
         }
         else
-            maskToVisit = 100;  
+            maskToVisit = 100;
         
     }
 
@@ -137,6 +137,11 @@ public class GameManager : MonoBehaviour
     {
         StartEvent();
         SwitchMapEvent();
+        //Debug.Log(Time.unscaledTime / Time.unscaledDeltaTime);
+        if (isGameOver)
+        {
+            startTracking = false;
+        }
     }
 
     private void StartEvent()
