@@ -14,10 +14,12 @@ public class PostProcessingManager : MonoBehaviour
     private float timeChanging;
     private float deltaTime;
     private int swapDirect = 1;
-    private int frameIndex = 0;
+    private int frameExposureIndex = 0;
+    private int frameBloomIndex = 0;
     private int frameFinal;
-    private bool activateNightLight;
     private bool inNight;
+    private float timeBloom;
+    private float rate = .25f;
 
     private void Start()
     {
@@ -27,7 +29,6 @@ public class PostProcessingManager : MonoBehaviour
         volume.profile.TryGetSettings<Bloom>(out bloom);
 
         time = gameManager.GetTimeCycle();
-        activateNightLight = false;
         inNight = false;
     }
 
@@ -38,40 +39,35 @@ public class PostProcessingManager : MonoBehaviour
 
     private void DayNightCycle()
     {
-        BloomActive(); 
         timeChanging += Time.deltaTime / time;
-        frameIndex += 1;
-        frameFinal = (int)(((1 - timeChanging) * frameIndex) / timeChanging) + frameIndex;
-        deltaTime = (1.8f * swapDirect) / frameFinal;
-        autoExposure.minLuminance.value = Mathf.Clamp(autoExposure.minLuminance.value += deltaTime, -0.8f, 1);
-      
+        deltaTime = CalculateRateTime(ref deltaTime, ref frameExposureIndex, .8f); 
+        autoExposure.minLuminance.value = Mathf.Clamp(autoExposure.minLuminance.value += deltaTime, -0.8f, 0f);
+
+        timeBloom = CalculateRateTime(ref timeBloom, ref frameBloomIndex, 35);
+        if (!inNight && timeChanging >= .7f)
+            rate = 2f;
+        else if (inNight)
+            rate = 1.5f;
+        bloom.intensity.value = Mathf.Clamp(bloom.intensity.value += timeBloom * rate, 0, 35);
+        
        
         if (timeChanging >= 1)
         {
-            frameIndex = 0;
+            rate = .25f;
+            frameExposureIndex = 0;
+            frameBloomIndex = 0;
             swapDirect = -swapDirect;
-            activateNightLight = !activateNightLight;
             timeChanging = 0;
             inNight = !inNight;
         }
     }
-
-    private void BloomActive()
+    
+    private float CalculateRateTime(ref float deltaTime, ref int frameIndex, float value)
     {
-        if (inNight)
-        {
-            bloom.active = true;
-            bloom.intensity.value -= .05f;
-            if (timeChanging >= 0.15f)
-            {
-                bloom.active = false;
-                bloom.intensity.value = 50;
-            }
-                
-        }
-        else
-        {
-            bloom.active = false;
-        }
+        frameIndex += 1;
+        frameFinal = (int)(((1 - timeChanging) * frameIndex) / timeChanging) + frameIndex;
+        deltaTime = (value * swapDirect) / frameFinal;
+        return deltaTime;
     }
+
 }

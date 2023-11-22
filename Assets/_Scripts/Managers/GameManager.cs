@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager _instance;
     [Header("parameters")]
     [SerializeField] private Vector3 offsetLocation;
-    [SerializeField] private float timeCycle = 15;
+    [SerializeField] private float timeCycle = 50;
 
     [Header ("GameObject Prefab")]
     [SerializeField] private GameObject koreaPrefab;
@@ -137,7 +137,6 @@ public class GameManager : MonoBehaviour
     {
         StartEvent();
         SwitchMapEvent();
-        //Debug.Log(Time.unscaledTime / Time.unscaledDeltaTime);
     }
 
     private void StartEvent()
