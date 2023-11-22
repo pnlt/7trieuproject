@@ -193,9 +193,7 @@ public class Player_Controller : MonoBehaviour
     }
 
     private void StartMotion()
-    {
-        isGameStarted = gameManager.GetGameStart();
-        pauseGame = gameManager.GetGamePause();
+    {      
 
         if (pauseGame)
             player_Animator.SetInteger("isRunning", 0);
@@ -235,8 +233,9 @@ public class Player_Controller : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        isGameStarted = gameManager.GetGameStart();
+        pauseGame = gameManager.GetGamePause();
         InputChecking();
-        
         ApproachSwitchMap();
         GameOver();
     }

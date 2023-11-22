@@ -32,4 +32,9 @@ public class EnemyReturn : MonoBehaviour
             lifeTime = 0;
         }
     }
+
+    private void OnDisable()
+    {
+        lifeTime = 0;
+    }
 }
