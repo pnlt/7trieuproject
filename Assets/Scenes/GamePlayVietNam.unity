@@ -2724,9 +2724,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorArray:
   - {r: 0.7372549, g: 0.8000001, b: 0.9058824, a: 1}
-  - {r: 0.20000002, g: 0.26666668, b: 0.37647063, a: 1}
+  - {r: 0.37254903, g: 0.47450984, b: 0.6509804, a: 1}
   skyColor: {fileID: 0}
-  time: 15
+  time: 50
 --- !u!212 &231550583
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5592,7 +5592,8 @@ MonoBehaviour:
   laneDistance: 3
   side_speed: 0
   running_Speed: 30
-  jump_Force: 10
+  maxspeed: 60
+  jump_Force: 11
   speedIncreaseRate: 0.1
   shieldPrefab: {fileID: 1077329180}
   shieldDuration: 5
@@ -5624,7 +5625,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &561438498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10925,10 +10926,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorArray:
-  - {r: 0.8862746, g: 0.854902, b: 0.7803922, a: 1}
-  - {r: 0.04705883, g: 0.03137255, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.2830189, g: 0.2814169, b: 0.2814169, a: 1}
   skyColor: {fileID: 0}
-  time: 15
+  time: 50
 --- !u!108 &1097230820
 Light:
   m_ObjectHideFlags: 0
@@ -12269,7 +12270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8085558431275442503, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 76.20001
+      value: 75.38
       objectReference: {fileID: 0}
     - target: {fileID: 8085558431275442503, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16199,11 +16200,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fecae2a77cef6694caa4dd7624c09ef9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6c7e1b8a0bea4ec41ae7561f5040caf3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -20000,7 +20001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8085558431275442503, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 134.9
+      value: 133.38
       objectReference: {fileID: 0}
     - target: {fileID: 8085558431275442503, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
       propertyPath: m_LocalRotation.w
