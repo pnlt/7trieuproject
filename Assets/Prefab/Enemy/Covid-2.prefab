@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6748617892403883899}
   - component: {fileID: -1963929476527251580}
   - component: {fileID: 5460203230187601211}
-  - component: {fileID: -369699577958614905}
+  - component: {fileID: 9198724947707335174}
   m_Layer: 7
   m_Name: Covid-2
   m_TagString: Untagged
@@ -69,9 +69,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf298675ffff62d41a86453f8c8d5929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 23
   xVel: 1
-  yVel: 1
+  yVel: 1.5
   zVel: 1
 --- !u!114 &5460203230187601211
 MonoBehaviour:
@@ -92,7 +92,7 @@ MonoBehaviour:
   radius: 0.5
   gameManager: {fileID: 0}
   player: {fileID: 0}
---- !u!114 &-369699577958614905
+--- !u!114 &9198724947707335174
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -101,10 +101,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 478198848724274167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec6e1132a7d62c045a670515869aa660, type: 3}
+  m_Script: {fileID: 11500000, guid: 71223fba63f009246aae7a406abf9dea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifeCycle: 5
+  _lifeCycle: 7
 --- !u!1001 &8965120947258748112
 PrefabInstance:
   m_ObjectHideFlags: 0

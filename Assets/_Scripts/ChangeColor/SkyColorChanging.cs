@@ -22,7 +22,6 @@ public class SkyColorChanging : MonoBehaviour
     private void Update()
     {
         Transition();
-        //Debug.Log(colorArray.Length);
     }
 
     private void Transition()
