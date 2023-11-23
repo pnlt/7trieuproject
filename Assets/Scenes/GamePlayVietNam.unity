@@ -5565,7 +5565,6 @@ Transform:
   - {fileID: 1411474484}
   - {fileID: 1557249963}
   - {fileID: 923816002}
-  - {fileID: 1413131256}
   - {fileID: 667795622}
   - {fileID: 927658471}
   - {fileID: 1928071081}
@@ -8228,15 +8227,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expendable: 1
-  count: 7
+  count: 5
   objectSpawnRandom:
   - name: Covid-1
     prefabEnemy: {fileID: 478198848724274167, guid: 2d690ce0ddaaf7846aa9952a6b82197f, type: 3}
-    chance: 50
-    _weight: 0
-  - name: Covid-2
-    prefabEnemy: {fileID: 478198848724274167, guid: 2bc57da022c897c41abdab3524be71f3, type: 3}
-    chance: 50
+    chance: 100
     _weight: 0
 --- !u!4 &822754090
 Transform:
@@ -13957,37 +13952,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 705773370}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1413131255
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1413131256}
-  m_Layer: 6
-  m_Name: PlayerBack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1413131256
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413131255}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.36999995, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 561438495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413752377
 GameObject:

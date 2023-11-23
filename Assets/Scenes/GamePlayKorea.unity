@@ -5565,7 +5565,6 @@ Transform:
   - {fileID: 1411474484}
   - {fileID: 1557249963}
   - {fileID: 923816002}
-  - {fileID: 1413131256}
   - {fileID: 667795622}
   - {fileID: 927658471}
   - {fileID: 1928071081}
@@ -8176,15 +8175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expendable: 1
-  count: 7
+  count: 5
   objectSpawnRandom:
   - name: Covid-1
     prefabEnemy: {fileID: 478198848724274167, guid: 2d690ce0ddaaf7846aa9952a6b82197f, type: 3}
-    chance: 50
-    _weight: 0
-  - name: Covid-2
-    prefabEnemy: {fileID: 478198848724274167, guid: 2bc57da022c897c41abdab3524be71f3, type: 3}
-    chance: 50
+    chance: 100
     _weight: 0
 --- !u!4 &822754090
 Transform:
@@ -12196,6 +12191,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
+    - target: {fileID: 2988969695343728703, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4382030123425772736, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4583153729918431342, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
@@ -12243,18 +12250,6 @@ PrefabInstance:
     - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_Name
       value: Korea
-      objectReference: {fileID: 0}
-    - target: {fileID: 2988969695343728703, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382030123425772736, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: isDefault
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13906,55 +13901,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 705773370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1413131255
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1413131256}
-  - component: {fileID: 1413131257}
-  m_Layer: 6
-  m_Name: PlayerBack
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1413131256
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413131255}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.36999995, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 561438495}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1413131257
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1413131255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41974dbc33a7a6d4385bfcdd2ed0fb0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  virusMask:
-    serializedVersion: 2
-    m_Bits: 128
-  length: 10
-  speedRate: 0.2
 --- !u!1 &1413752377
 GameObject:
   m_ObjectHideFlags: 0
@@ -16289,6 +16235,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
+    - target: {fileID: 1169702538618950100, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2988969695343728703, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246143735916750076, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507352016366294907, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 680ff7ce2c188a34e88f8f0b8fb93cb2, type: 2}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1440606217561815300, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -16348,30 +16318,6 @@ PrefabInstance:
     - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_Name
       value: Korea (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1169702538618950100, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2988969695343728703, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5246143735916750076, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6507352016366294907, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8525404590804473970, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 680ff7ce2c188a34e88f8f0b8fb93cb2, type: 2}
-    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: isDefault
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19485,7 +19431,7 @@ MonoBehaviour:
   - {fileID: 985426132}
   pooledPrefabs:
   - {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
-  - {fileID: 8687180118915921771, guid: 9ea993310e3822442a91855001a29a9c, type: 3}
+  - {fileID: 8687180118915921771, guid: 06d41abb0a7a3c940aaf202691a8c36b, type: 3}
   maskThreshold: 3200000032000000
 --- !u!4 &1866227485
 Transform:
@@ -20011,6 +19957,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 922214906}
     m_Modifications:
+    - target: {fileID: 2988969695343728703, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
+      propertyPath: isDefault
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4583153729918431342, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: isDefault
       value: 1
@@ -20058,14 +20012,6 @@ PrefabInstance:
     - target: {fileID: 8687180118915921771, guid: a7dec7ca0a8f0c048814a22d0ff7f920, type: 3}
       propertyPath: m_Name
       value: Korea (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2988969695343728703, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: isDefault
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8896930988320914699, guid: ac4ff6f7c30ed5a488e23e698d9d53f9, type: 3}
-      propertyPath: isDefault
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
