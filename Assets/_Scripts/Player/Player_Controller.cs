@@ -276,7 +276,7 @@ public class Player_Controller : MonoBehaviour
     private void GameOver()
     {
         isGameOver = gameManager.GetGameOver();
-        if (isGameOver)
+        if (isGameOver && !gameManager.GetSwitchMap())
         {
             gameManager.SetGameOver(false);
             gameManager.SetGameStart(false);

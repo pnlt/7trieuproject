@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e35ecaffff57ef8479d32caa83d00a76
+guid: 76761b351f7312e4a9b676004e3e044d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,57 +7,52 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Accessory_Metal_m
+      name: Accessory_Metal_m.005
     second: {fileID: 2100000, guid: 513ee78a4fe3b0349aab28a8f2edc336, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Door_01_m
+      name: Door_01_m.005
     second: {fileID: 2100000, guid: eebc3788e8bf0f44e9b94fc04f01c8dc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Door_02_m
+      name: Door_02_m.005
     second: {fileID: 2100000, guid: 841838ae1841d6b409d9e9feda4ff28c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Floor_Brick_m
+      name: Floor_Brick_m.005
     second: {fileID: 2100000, guid: 6465da9a04a81dd41afd5ff0fc4de788, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Floor_Cocncrete_01_m
+      name: Floor_wood_m.002
     second: {fileID: 2100000, guid: cf88d16018bcf7f42b9e0e75d3d5998d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Floor_wood_m
+      name: Module_Wood_01_m.005
     second: {fileID: 2100000, guid: e1d70682990862b47ab8440fa2a34063, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Module_Wood_01_m
+      name: Pillar_Wood_01_m.007
     second: {fileID: 2100000, guid: 6158d2d56b8cfab4aa6d5faa705aacd8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pillar_Wood_01_m
+      name: Pillar_Wood_01_m.008
     second: {fileID: 2100000, guid: bffa53a6df8150144a08aa147367cb1e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pillar_Wood_01_m.001
-    second: {fileID: 2100000, guid: 356a7af8be6dbb441b5a3ad753f2077b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Roof_Concrete_01_m
+      name: Roof_Concrete_01_m.005
     second: {fileID: 2100000, guid: fbb772e4953c1c640abb392f1a3a77d7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Roof_Concrete_02_m
+      name: Roof_Concrete_02_m.005
     second: {fileID: 2100000, guid: b91382048236c3c489939e7ada671817, type: 2}
   materials:
     materialImportMode: 2
@@ -103,7 +98,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
