@@ -238,6 +238,7 @@ public class Player_Controller : MonoBehaviour
         InputChecking();
         ApproachSwitchMap();
         GameOver();
+        Debug.Log(swipeTop);
     }
 
     private void FixedUpdate()
@@ -382,7 +383,8 @@ public class Player_Controller : MonoBehaviour
             {
                 if (swipeTop)
                 {
-                    player_Animator.SetInteger("isJump", 1);
+                    other.gameObject.GetComponent<Collider>().enabled = false;
+                    //player_Animator.SetInteger("isJump", 1);
                     uiManager.HideswipeTopPanel();
                     gameManager.SetGamePause(false);
                 }
