@@ -59,7 +59,7 @@ public class EnemyMoving : MonoBehaviour
 
             transform.eulerAngles = new Vector3(
                 Mathf.SmoothDampAngle(transform.eulerAngles.x, target.x, ref xVel, .03f),
-                Mathf.SmoothDampAngle(transform.eulerAngles.y, target.y, ref xVel, .01f),
+                Mathf.SmoothDampAngle(transform.eulerAngles.y, target.y, ref xVel, .02f),
                 Mathf.SmoothDampAngle(transform.eulerAngles.z, target.z, ref xVel, .03f)
 
                 );

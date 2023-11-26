@@ -11,6 +11,7 @@ public class LightChanging : MonoBehaviour
 
     private int firstColor;
     private int secondColor;
+    //public Light pointLight;
 
     private void Start()
     {
@@ -22,7 +23,6 @@ public class LightChanging : MonoBehaviour
     private void Update()
     {
         Transition();
-        //Debug.Log(colorArray.Length);
     }
 
     private void Transition()
